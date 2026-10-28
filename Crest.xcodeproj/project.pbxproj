@@ -12685,10 +12685,10 @@
 		77246D3C18A4BE22588899AF /* Embed Dependencies */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 13;
+			dstPath = Contents/Helpers;
+			dstSubfolderSpec = 1;
 			files = (
-				E920722BC4FE573FCD86AC2F /* CrestDockTilePlugin.bundle in Embed Dependencies */,
+				602EA1C48DA886AF37165D05 /* CrestBrowserHelper in Embed Dependencies */,
 			);
 			name = "Embed Dependencies";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -12729,10 +12729,10 @@
 		F67E0DC06840146EFBBD7607 /* Embed Dependencies */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
-			dstPath = Contents/Helpers;
-			dstSubfolderSpec = 1;
+			dstPath = "";
+			dstSubfolderSpec = 13;
 			files = (
-				602EA1C48DA886AF37165D05 /* CrestBrowserHelper in Embed Dependencies */,
+				E920722BC4FE573FCD86AC2F /* CrestDockTilePlugin.bundle in Embed Dependencies */,
 			);
 			name = "Embed Dependencies";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -25185,51 +25185,51 @@
 				LastUpgradeCheck = 2700;
 				TargetAttributes = {
 					111A93F8B478002FE1D14B42 = {
-						DevelopmentTeam = 3U2R97HLXF;
+						DevelopmentTeam = 7D9LXJ8749;
 						ProvisioningStyle = Automatic;
 					};
 					321819CE93FADB5156A5A1DC = {
-						DevelopmentTeam = 3U2R97HLXF;
+						DevelopmentTeam = 7D9LXJ8749;
 						ProvisioningStyle = Automatic;
 					};
 					412EB9963F05DC0CBBBC33B0 = {
-						DevelopmentTeam = 3U2R97HLXF;
+						DevelopmentTeam = 7D9LXJ8749;
 						ProvisioningStyle = Automatic;
 					};
 					4356C4DA52CAE7524DEB0A38 = {
-						DevelopmentTeam = 3U2R97HLXF;
+						DevelopmentTeam = 7D9LXJ8749;
 						ProvisioningStyle = Automatic;
 					};
 					46B0D0C971890F8BC88AF730 = {
-						DevelopmentTeam = 3U2R97HLXF;
+						DevelopmentTeam = 7D9LXJ8749;
 						ProvisioningStyle = Automatic;
 					};
 					4D341E5497DB9B25FC73E60C = {
-						DevelopmentTeam = 3U2R97HLXF;
+						DevelopmentTeam = 7D9LXJ8749;
 						ProvisioningStyle = Automatic;
 					};
 					64F711736DE805DD1E5F0F82 = {
-						DevelopmentTeam = 3U2R97HLXF;
+						DevelopmentTeam = 7D9LXJ8749;
 						ProvisioningStyle = Automatic;
 					};
 					A15FDC6470C477C0C71DE608 = {
-						DevelopmentTeam = 3U2R97HLXF;
+						DevelopmentTeam = 7D9LXJ8749;
 						ProvisioningStyle = Automatic;
 					};
 					ADA9BA9F3D6E69D3F8FBB95C = {
-						DevelopmentTeam = 3U2R97HLXF;
+						DevelopmentTeam = 7D9LXJ8749;
 						ProvisioningStyle = Automatic;
 					};
 					ADEDE72882F61267A8E12490 = {
-						DevelopmentTeam = 3U2R97HLXF;
+						DevelopmentTeam = 7D9LXJ8749;
 						ProvisioningStyle = Automatic;
 					};
 					C12D338E727EE8486BB3B0EA = {
-						DevelopmentTeam = 3U2R97HLXF;
+						DevelopmentTeam = 7D9LXJ8749;
 						ProvisioningStyle = Automatic;
 					};
 					E7D659FB7197EB7B4A7EA254 = {
-						DevelopmentTeam = 3U2R97HLXF;
+						DevelopmentTeam = 7D9LXJ8749;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -38178,7 +38178,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				CREST_CORE_LIBRARY_DIR = "$(PROJECT_DIR)/CrestCore/src/CrestCore.Native/bin/Release/net10.0/osx-arm64/publish";
 				CREST_DEFAULT_UPDATE_CHANNEL = development;
-				CREST_NATIVE_CORE_BUNDLE_IDENTIFIER = "com.pauldavis.crest.native-core";
+				CREST_NATIVE_CORE_BUNDLE_IDENTIFIER = "com.k3nton.crest.native-core";
 				CREST_NATIVE_CORE_ENTITLEMENTS = CrestNative/Apple/Composition/ControlPlane.entitlements;
 				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = "CrestMac/Configuration/Crest-Info.plist";
@@ -38205,7 +38205,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.pauldavis.crest.mobile.tests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.k3nton.crest.mobile.tests;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited)";
 				SWIFT_INCLUDE_PATHS = "$(inherited) $(PROJECT_DIR)/CrestContracts/include";
@@ -38223,7 +38223,7 @@
 				CODE_SIGN_ENTITLEMENTS = CrestMobile/Configuration/CrestMobile.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CREST_CORE_FRAMEWORK_DIR = "$(BUILT_PRODUCTS_DIR)/CrestCore";
-				CREST_MOBILE_BUNDLE_IDENTIFIER = com.pauldavis.crest;
+				CREST_MOBILE_BUNDLE_IDENTIFIER = com.k3nton.crest;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited) $(CREST_CORE_FRAMEWORK_DIR)";
 				GENERATE_INFOPLIST_FILE = NO;
@@ -38251,7 +38251,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.pauldavis.crest.docktileplugin;
+				PRODUCT_BUNDLE_IDENTIFIER = com.k3nton.crest.docktileplugin;
 				PRODUCT_MODULE_NAME = CrestDockTilePlugin;
 				PRODUCT_NAME = CrestDockTilePlugin;
 				SDKROOT = macosx;
@@ -38263,7 +38263,7 @@
 		2389A25C2B1F3582F1C76CC5 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CREST_MOBILE_BUNDLE_IDENTIFIER = com.pauldavis.crest;
+				CREST_MOBILE_BUNDLE_IDENTIFIER = com.k3nton.crest;
 				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = CrestShareExtension/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 26.1;
@@ -38289,7 +38289,7 @@
 				CODE_SIGN_ENTITLEMENTS = CrestMobile/Configuration/CrestMobile.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CREST_CORE_FRAMEWORK_DIR = "$(BUILT_PRODUCTS_DIR)/CrestCore";
-				CREST_MOBILE_BUNDLE_IDENTIFIER = com.pauldavis.crest;
+				CREST_MOBILE_BUNDLE_IDENTIFIER = com.k3nton.crest;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited) $(CREST_CORE_FRAMEWORK_DIR)";
 				GENERATE_INFOPLIST_FILE = NO;
@@ -38316,7 +38316,7 @@
 				"CODE_SIGN_ENTITLEMENTS[sdk=iphoneos*]" = CrestNative/Apple/Composition/MobileCloudReview.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CREST_CORE_FRAMEWORK_DIR = "$(PROJECT_DIR)/CrestCore/artifacts/$(PLATFORM_NAME)";
-				CREST_MOBILE_BUNDLE_IDENTIFIER = "com.pauldavis.crest.mobile-native-core";
+				CREST_MOBILE_BUNDLE_IDENTIFIER = "com.k3nton.crest.mobile-native-core";
 				FRAMEWORK_SEARCH_PATHS = "$(inherited) $(CREST_CORE_FRAMEWORK_DIR)";
 				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = "CrestMobile/Configuration/CrestMobile-Info.plist";
@@ -38344,7 +38344,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.pauldavis.crest.mobile.tests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.k3nton.crest.mobile.tests;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited)";
 				SWIFT_INCLUDE_PATHS = "$(inherited) $(PROJECT_DIR)/CrestContracts/include";
@@ -38363,7 +38363,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.pauldavis.crest.browser-helper";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.k3nton.crest.browser-helper";
 				PRODUCT_MODULE_NAME = CrestBrowserHelper;
 				PRODUCT_NAME = "crest-browser";
 				SDKROOT = macosx;
@@ -38383,7 +38383,7 @@
 					"@executable_path/../Frameworks",
 					"@loader_path/../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.pauldavis.crest.tests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.k3nton.crest.tests;
 				SDKROOT = macosx;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited)";
 				SWIFT_INCLUDE_PATHS = "$(inherited) $(PROJECT_DIR)/CrestContracts/include";
@@ -38402,7 +38402,7 @@
 					"@executable_path/../Frameworks",
 					"@loader_path/../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.pauldavis.crest.native-core.tests";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.k3nton.crest.native-core.tests";
 				SDKROOT = macosx;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
@@ -38429,7 +38429,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @loader_path/../../..";
 				OTHER_LDFLAGS = "$(inherited) \"$(CREST_CORE_LIBRARY_DIR)/CrestCore.Native.dylib\"";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.pauldavis.crest.chromium-ui";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.k3nton.crest.chromium-ui";
 				PRODUCT_MODULE_NAME = CrestChromiumUI;
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
@@ -38444,7 +38444,7 @@
 		6086ED4957AD3F2025E7FBF8 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CREST_MOBILE_BUNDLE_IDENTIFIER = com.pauldavis.crest;
+				CREST_MOBILE_BUNDLE_IDENTIFIER = com.k3nton.crest;
 				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = CrestShareExtension/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 26.1;
@@ -38479,7 +38479,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @loader_path/../../..";
 				OTHER_LDFLAGS = "$(inherited) \"$(CREST_CORE_LIBRARY_DIR)/CrestCore.Native.dylib\"";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.pauldavis.crest.chromium-ui";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.k3nton.crest.chromium-ui";
 				PRODUCT_MODULE_NAME = CrestChromiumUI;
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
@@ -38501,7 +38501,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.pauldavis.crest.browser-helper";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.k3nton.crest.browser-helper";
 				PRODUCT_MODULE_NAME = CrestBrowserHelper;
 				PRODUCT_NAME = "crest-browser";
 				SDKROOT = macosx;
@@ -38519,7 +38519,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				CREST_CORE_LIBRARY_DIR = "$(BUILT_PRODUCTS_DIR)/CrestCore";
 				CREST_DEFAULT_UPDATE_CHANNEL = development;
-				CREST_MAC_BUNDLE_IDENTIFIER = com.pauldavis.crest;
+				CREST_MAC_BUNDLE_IDENTIFIER = com.k3nton.crest;
 				CREST_MAC_ENTITLEMENTS = CrestMac/Configuration/Crest.entitlements;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = NO;
@@ -38577,7 +38577,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_LANGUAGE = en;
-				DEVELOPMENT_TEAM = 3U2R97HLXF;
+				DEVELOPMENT_TEAM = 7D9LXJ8749;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -38614,7 +38614,7 @@
 					"@executable_path/../Frameworks",
 					"@loader_path/../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.pauldavis.crest.tests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.k3nton.crest.tests;
 				SDKROOT = macosx;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited)";
 				SWIFT_INCLUDE_PATHS = "$(inherited) $(PROJECT_DIR)/CrestContracts/include";
@@ -38631,7 +38631,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				CREST_CORE_LIBRARY_DIR = "$(PROJECT_DIR)/CrestCore/src/CrestCore.Native/bin/Release/net10.0/osx-arm64/publish";
 				CREST_DEFAULT_UPDATE_CHANNEL = development;
-				CREST_NATIVE_CORE_BUNDLE_IDENTIFIER = "com.pauldavis.crest.native-core";
+				CREST_NATIVE_CORE_BUNDLE_IDENTIFIER = "com.k3nton.crest.native-core";
 				CREST_NATIVE_CORE_ENTITLEMENTS = CrestNative/Apple/Composition/ControlPlane.entitlements;
 				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = "CrestMac/Configuration/Crest-Info.plist";
@@ -38658,7 +38658,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.pauldavis.crest.docktileplugin;
+				PRODUCT_BUNDLE_IDENTIFIER = com.k3nton.crest.docktileplugin;
 				PRODUCT_MODULE_NAME = CrestDockTilePlugin;
 				PRODUCT_NAME = CrestDockTilePlugin;
 				SDKROOT = macosx;
@@ -38676,7 +38676,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				CREST_CORE_LIBRARY_DIR = "$(BUILT_PRODUCTS_DIR)/CrestCore";
 				CREST_DEFAULT_UPDATE_CHANNEL = development;
-				CREST_MAC_BUNDLE_IDENTIFIER = com.pauldavis.crest;
+				CREST_MAC_BUNDLE_IDENTIFIER = com.k3nton.crest;
 				CREST_MAC_ENTITLEMENTS = CrestMac/Configuration/Crest.entitlements;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = NO;
@@ -38734,7 +38734,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEVELOPMENT_LANGUAGE = en;
-				DEVELOPMENT_TEAM = 3U2R97HLXF;
+				DEVELOPMENT_TEAM = 7D9LXJ8749;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -38778,7 +38778,7 @@
 					"@executable_path/../Frameworks",
 					"@loader_path/../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.pauldavis.crest.native-core.tests";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.k3nton.crest.native-core.tests";
 				SDKROOT = macosx;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
@@ -38805,7 +38805,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @loader_path/../../..";
 				OTHER_LDFLAGS = "$(inherited) \"$(CREST_CORE_LIBRARY_DIR)/CrestCore.Native.dylib\"";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.pauldavis.crest.chromium-ui";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.k3nton.crest.chromium-ui";
 				PRODUCT_MODULE_NAME = CrestChromiumUI;
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
@@ -38826,7 +38826,7 @@
 				"CODE_SIGN_ENTITLEMENTS[sdk=iphoneos*]" = CrestNative/Apple/Composition/MobileCloudReview.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CREST_CORE_FRAMEWORK_DIR = "$(PROJECT_DIR)/CrestCore/artifacts/$(PLATFORM_NAME)";
-				CREST_MOBILE_BUNDLE_IDENTIFIER = "com.pauldavis.crest.mobile-native-core";
+				CREST_MOBILE_BUNDLE_IDENTIFIER = "com.k3nton.crest.mobile-native-core";
 				FRAMEWORK_SEARCH_PATHS = "$(inherited) $(CREST_CORE_FRAMEWORK_DIR)";
 				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = "CrestMobile/Configuration/CrestMobile-Info.plist";
@@ -38862,7 +38862,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @loader_path/../../..";
 				OTHER_LDFLAGS = "$(inherited) \"$(CREST_CORE_LIBRARY_DIR)/CrestCore.Native.dylib\"";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.pauldavis.crest.chromium-ui";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.k3nton.crest.chromium-ui";
 				PRODUCT_MODULE_NAME = CrestChromiumUI;
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
