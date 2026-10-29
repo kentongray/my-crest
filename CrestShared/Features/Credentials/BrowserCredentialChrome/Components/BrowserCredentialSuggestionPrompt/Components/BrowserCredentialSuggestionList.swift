@@ -7,6 +7,8 @@ import SwiftUI
 struct BrowserCredentialSuggestionList: View {
     let suggestions: [CredentialDescriptor]
     let metrics: BrowserCredentialPromptMetrics
+    /// The password manager outside Crest a suggestion came from, if any.
+    var sourceName: (CredentialDescriptor) -> String? = { _ in nil }
     let fill: (CredentialDescriptor) -> Void
 
     @ViewBuilder
@@ -31,6 +33,7 @@ struct BrowserCredentialSuggestionList: View {
         ForEach(suggestions) { suggestion in
             BrowserCredentialSuggestionRow(
                 suggestion: suggestion,
+                sourceName: sourceName(suggestion),
                 metrics: metrics,
                 fill: { fill(suggestion) }
             )

@@ -4593,6 +4593,10 @@
     "command-bar-dim-setting": {
       "category": "new",
       "message": "On the Mac, Look & Feel can stop the command bar from dimming the page behind it. The bar then casts a shadow, and clicking outside it still closes it."
+    },
+    "fill-from-onepassword": {
+      "category": "new",
+      "message": "On the Mac, Crest's password suggestions can include your 1Password logins. Turn on Fill from 1Password in a Space's Passwords settings and approve Crest in 1Password; passwords are read from 1Password only when you pick one to fill."
     }
   }
 }

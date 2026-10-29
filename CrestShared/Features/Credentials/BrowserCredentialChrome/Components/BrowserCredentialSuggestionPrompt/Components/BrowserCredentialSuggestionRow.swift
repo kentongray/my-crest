@@ -8,6 +8,8 @@ import SwiftUI
 /// exact-origin match for the one the header already named.
 struct BrowserCredentialSuggestionRow: View {
     let suggestion: CredentialDescriptor
+    /// The password manager outside Crest the login came from, named under it.
+    var sourceName: String? = nil
     let metrics: BrowserCredentialPromptMetrics
     let fill: () -> Void
 
@@ -75,12 +77,12 @@ struct BrowserCredentialSuggestionRow: View {
         return displayName
     }
 
-    /// The login under the name, where the name is not already it.
+    /// The login under the name, where the name is not already it, and the
+    /// password manager it came from.
     private var detail: String? {
-        guard metrics.suggestionRowShowsAccountDetail,
-            title != suggestion.username
-        else { return nil }
-        return suggestion.username
+        guard metrics.suggestionRowShowsAccountDetail else { return sourceName }
+        let parts = [title != suggestion.username ? suggestion.username : nil, sourceName].compactMap(\.self)
+        return parts.isEmpty ? nil : parts.joined(separator: " · ")
     }
 }
 

@@ -52,7 +52,37 @@ extension BrowserStore {
             throw CredentialVaultError.invalidOrigin
         }
         guard origin.isSecure else { return [] }
-        return try await credentialVault.descriptors(matching: origin, in: spaceID)
+        guard let source = enabledExternalCredentialSource else {
+            return try await credentialVault.descriptors(matching: origin, in: spaceID)
+        }
+        // The Space's own passwords and the external source's are read
+        // together. One failing still offers the other's, and the prompt
+        // reports a failure only when neither answered.
+        let vault = credentialVault
+        async let saved: Result<[CredentialDescriptor], any Error> = {
+            do {
+                return .success(try await vault.descriptors(matching: origin, in: spaceID))
+            } catch {
+                return .failure(error)
+            }
+        }()
+        let externalResult: Result<[CredentialDescriptor], any Error>
+        do {
+            externalResult = .success(try await source.descriptors(matching: origin, in: spaceID))
+        } catch {
+            externalResult = .failure(error)
+        }
+        let savedResult = await saved
+        if case .failure(let error) = savedResult, case .failure = externalResult {
+            throw error
+        }
+        return ((try? savedResult.get()) ?? []) + ((try? externalResult.get()) ?? [])
+    }
+
+    /// The family's external password manager, while the person has it on.
+    var enabledExternalCredentialSource: (any BrowserExternalCredentialSource)? {
+        guard let source = family.externalCredentialSource, source.isEnabled else { return nil }
+        return source
     }
 
     func credential(id: UUID) async throws -> BrowserCredential? {
@@ -65,6 +95,9 @@ extension BrowserStore {
     func credential(id: UUID, in spaceID: UUID) async throws -> BrowserCredential? {
         guard spaceModel(spaceID) != nil else {
             throw CredentialVaultError.missingSpace
+        }
+        if let source = family.externalCredentialSource, source.recognizes(id) {
+            return try await source.credential(id: id)
         }
         return try await credentialVault.credential(id: id, in: spaceID)
     }

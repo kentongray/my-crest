@@ -6,6 +6,7 @@ struct BrowserCredentialSuggestionState: View {
     let isLoading: Bool
     let suggestions: [CredentialDescriptor]
     let metrics: BrowserCredentialPromptMetrics
+    var sourceName: (CredentialDescriptor) -> String? = { _ in nil }
     let fill: (CredentialDescriptor) -> Void
 
     @ViewBuilder
@@ -20,6 +21,7 @@ struct BrowserCredentialSuggestionState: View {
             BrowserCredentialSuggestionList(
                 suggestions: suggestions,
                 metrics: metrics,
+                sourceName: sourceName,
                 fill: fill
             )
         }
