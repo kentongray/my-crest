@@ -244,6 +244,12 @@ final class BrowserMacApplication {
         privateBrowser.tabLinkProvider = privatePages
         browser.tabCopying = pages
         privateBrowser.tabCopying = privatePages
+        // 1Password's logins join the standard windows' password prompts. A
+        // private window or an isolated launch never reaches the person's
+        // password manager.
+        if !usesIsolatedLaunch {
+            browser.family.externalCredentialSource = BrowserOnePasswordCredentialSource(defaults: .standard)
+        }
         let windowLayouts = BrowserWindowLayouts(defaults: sidebarDefaults)
         // The device store keeps whether setup was completed here, carried
         // once from what an older release kept in its defaults.

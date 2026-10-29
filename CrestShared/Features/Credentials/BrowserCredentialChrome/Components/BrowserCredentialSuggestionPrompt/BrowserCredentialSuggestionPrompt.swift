@@ -30,6 +30,7 @@ struct BrowserCredentialSuggestionPrompt: View {
                 model: model,
                 fillErrorMessage: fillErrorMessage,
                 metrics: metrics,
+                sourceName: sourceName,
                 dismiss: port.dismiss,
                 fill: fill
             )
@@ -39,6 +40,15 @@ struct BrowserCredentialSuggestionPrompt: View {
             await model.load(request, in: port.spaceID, using: browser)
         }
         .onDisappear(perform: model.cancel)
+    }
+
+    /// The external password manager a suggestion came from, which its row
+    /// names so a person can tell it from the Space's own passwords.
+    private func sourceName(_ descriptor: CredentialDescriptor) -> String? {
+        guard let source = browser.family.externalCredentialSource, source.recognizes(descriptor.id) else {
+            return nil
+        }
+        return source.name
     }
 
     private var space: BrowserSpaceIdentity? {

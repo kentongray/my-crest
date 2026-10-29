@@ -7,6 +7,7 @@ struct BrowserCredentialSuggestionPromptContent: View {
     let model: BrowserCredentialSuggestionModel
     let fillErrorMessage: String?
     let metrics: BrowserCredentialPromptMetrics
+    var sourceName: (CredentialDescriptor) -> String? = { _ in nil }
     let dismiss: () -> Void
     let fill: (CredentialDescriptor) -> Void
 
@@ -32,6 +33,7 @@ struct BrowserCredentialSuggestionPromptContent: View {
                 isLoading: model.isLoading,
                 suggestions: model.suggestions,
                 metrics: metrics,
+                sourceName: sourceName,
                 fill: fill
             )
             if model.hasFailed {

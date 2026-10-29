@@ -26,6 +26,10 @@ final class BrowserStoreFamily {
     @ObservationIgnored private weak var spaceCleanupStore: BrowserStore?
     @ObservationIgnored private(set) var spaceCleanupTask: Task<Void, Never>?
     @ObservationIgnored weak var pageDismissalAuthorizer: (any BrowserPageDismissalAuthorizing)?
+    /// A password manager outside Crest whose logins this family's password
+    /// prompts offer, which only a standard family on a platform that has
+    /// one is given.
+    @ObservationIgnored var externalCredentialSource: (any BrowserExternalCredentialSource)?
     /// The core that keeps this family's session in its file; nil in memory.
     @ObservationIgnored private let storage: CrestCore?
 

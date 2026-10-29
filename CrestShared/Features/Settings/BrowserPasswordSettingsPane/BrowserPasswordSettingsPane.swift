@@ -192,6 +192,10 @@ struct BrowserPasswordSettingsPane: View {
             }
         }
 
+        if let source = browser.family.externalCredentialSource {
+            BrowserExternalCredentialSourceSection(source: source)
+        }
+
         if let space {
             if canRevealSelectedSpaceData {
                 Section {
