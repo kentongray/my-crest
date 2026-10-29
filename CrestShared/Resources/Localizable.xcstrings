@@ -13,16 +13,10 @@
     "1Password stopped responding. Make sure it’s open and unlocked." : {
 
     },
-    "Approve Crest in 1Password, then check the connection again." : {
-
-    },
     "Check Connection" : {
 
     },
-    "Connected %@: %lld logins from %lld %@." : {
-
-    },
-    "Crest couldn’t load 1Password’s integration library." : {
+    "Connected: %lld logins from %lld %@." : {
 
     },
     "Crest couldn’t reach 1Password." : {
@@ -31,13 +25,13 @@
     "Crest couldn’t read 1Password’s answer." : {
 
     },
-    "Enter the 1Password accounts to fill from, or install the 1Password CLI." : {
+    "Crest couldn’t start its 1Password helper." : {
+
+    },
+    "Enter the 1Password accounts to fill from." : {
 
     },
     "Fill from %@" : {
-
-    },
-    "In 1Password, turn on Settings › Developer › Integrate with 1Password CLI." : {
 
     },
     "In 1Password, turn on Settings › Developer › Integrate with other apps." : {
@@ -46,22 +40,10 @@
     "Install the 1Password app to fill from it." : {
 
     },
-    "Install the 1Password CLI, or allow Crest to load 1Password’s integration library." : {
-
-    },
     "Offered beside Crest Passwords in Spaces that use them, on this Mac." : {
 
     },
     "Sign-in addresses or account IDs" : {
-
-    },
-    "The 1Password CLI failed." : {
-
-    },
-    "through the 1Password app" : {
-
-    },
-    "through the 1Password CLI" : {
 
     },
     "·" : {

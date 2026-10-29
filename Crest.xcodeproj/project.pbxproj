@@ -644,7 +644,6 @@
 		0D66A714D34D0A31FA13F8D8 /* BrowserTabCopying.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3474F6E74628E763F6D733 /* BrowserTabCopying.swift */; };
 		0D67A0C5EE600AD9C95B6FE6 /* BrowserSidebarWidgetRuntime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C1DBD0C55887A666DCC4B0E /* BrowserSidebarWidgetRuntime.swift */; };
 		0D6897F7FC4C711EA5336AE3 /* DownloadDestinationAsked+CoreState.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4B0D50BBA07D55B50A7E42 /* DownloadDestinationAsked+CoreState.swift */; };
-		0D6BA8B65549E4DA4211EE5C /* OnePasswordDesktopLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78966572D700BCC4C0472B86 /* OnePasswordDesktopLibrary.swift */; };
 		0D73B69723A50ACBAEBE8F77 /* BrowserDragPreviewWindowFloatingContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41F08C257F78F5BCC29AF7B /* BrowserDragPreviewWindowFloatingContent.swift */; };
 		0D79273399C2B132F3742F43 /* BrowserStoreFirstObservable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A34474AF302648F11240783F /* BrowserStoreFirstObservable.swift */; };
 		0D85AA959D18C95C1314E02C /* BrowserIconCustomizationPresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = D65B1F175E2EE46524195114 /* BrowserIconCustomizationPresentation.swift */; };
@@ -1767,7 +1766,6 @@
 		238C0903E50A89D3B6E99897 /* BrowserSidebarAddressPlaceholderGlyph.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105B007D7B665C1C423579AD /* BrowserSidebarAddressPlaceholderGlyph.swift */; };
 		238DCFC2CB4A8012DA69E6E1 /* BrowserSidebarReorderSectionIndicatorModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F6CCA16883EFEEF41BDFFEF /* BrowserSidebarReorderSectionIndicatorModifier.swift */; };
 		238E7CEEC90FFFB053DB320F /* BrowserShortcut.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FA40EB0748A792B69277516 /* BrowserShortcut.swift */; };
-		238F713A1CBDA3D661D78BBC /* OnePasswordAccountReading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C06ABC11DAAC79CDD7A4F45 /* OnePasswordAccountReading.swift */; };
 		239138BF240F7E4719212AB9 /* BrowserFolderHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE71A3F4749B73E7680763FD /* BrowserFolderHeader.swift */; };
 		23927FB4963DCC3FAD649ED9 /* GeolocationSystemService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61E5B504DB333CA0D295533C /* GeolocationSystemService.swift */; };
 		23956B799E3BCF7274593087 /* BrowserSplitColumnSlot.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA8D9DCA8352DE8F05E168D /* BrowserSplitColumnSlot.swift */; };
@@ -1798,7 +1796,6 @@
 		241F8562A2D5157CCBDF87B4 /* BrowserFindPort.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CC6E964F3E30544B5A017B1 /* BrowserFindPort.swift */; };
 		2421A27CDB936C309E387F9A /* BrowserShortcutList.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAFCDB22F3544E1698ECEB3E /* BrowserShortcutList.swift */; };
 		2424A65A24AF1227989FADA4 /* BrowserCredentialSavePromptContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7E439EA27A9F919ED8C046B /* BrowserCredentialSavePromptContent.swift */; };
-		24283667D4D2D38A48DD85A1 /* OnePasswordDesktopLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78966572D700BCC4C0472B86 /* OnePasswordDesktopLibrary.swift */; };
 		243825530768EEE7BECD1C5D /* BrowserOnePasswordCredentialSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08FC3A264EAF7F879265FB3 /* BrowserOnePasswordCredentialSource.swift */; };
 		243F975625AB34E4A3931DA5 /* BrowserDeveloperCaptureFeedbackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE29A9C36972E06F55499E8C /* BrowserDeveloperCaptureFeedbackView.swift */; };
 		244DC850EF2F9C8C6340B306 /* BrowserSavedTabsEndDropTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E171FC691186DEB9A3B87C3 /* BrowserSavedTabsEndDropTarget.swift */; };
@@ -3379,6 +3376,7 @@
 		431349333938B928596E5869 /* AddressCompletion+Editing.swift in Sources */ = {isa = PBXBuildFile; fileRef = F776E7B24CA9EF845C365C4B /* AddressCompletion+Editing.swift */; };
 		43137DA76D35621D670E288D /* AgentLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C9743FAA981571DA215A431 /* AgentLink.swift */; };
 		4313F1EB1198812FD7D91287 /* BrowserSpaceEditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FFAE41B89884701E2D3233E /* BrowserSpaceEditorView.swift */; };
+		43211265D0423410A0643A4A /* OnePasswordDesktopBridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DE3F10A3647A973FAF4EBB5 /* OnePasswordDesktopBridge.swift */; };
 		4326D3EB39135FFC17E8F54B /* BrowserCommandPaletteRowButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23DD7B039C1074708D1CE59 /* BrowserCommandPaletteRowButtonStyle.swift */; };
 		432D5610C1BAAC668665B180 /* BrowserPageArchiveFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3C5774DF2F6CC69A5F407A3 /* BrowserPageArchiveFormat.swift */; };
 		432F2AA549C4A16769DC1BF9 /* BrowserCredentialChrome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7977A0558546EBEBDDC17982 /* BrowserCredentialChrome.swift */; };
@@ -3464,7 +3462,6 @@
 		44BBD503639243BBE827D6CE /* BrowserPageWebNotificationClosed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B230644ED453F94AC3EE57C /* BrowserPageWebNotificationClosed.swift */; };
 		44C5A4D4913C6C55225D1E7E /* Sequence+DownloadNotificationProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6953C120F2D34B6F55087A1A /* Sequence+DownloadNotificationProgress.swift */; };
 		44C88082E4C955C7E8ACABE8 /* SecureOriginCheck+Answer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCE837E0DDB1CC8503176BBE /* SecureOriginCheck+Answer.swift */; };
-		44C895337601E5B4A7D3B8BC /* OnePasswordCommandLineClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = A62B545BA00C4A7AF2665ED8 /* OnePasswordCommandLineClient.swift */; };
 		44CBECB4EC10F322C1C9436E /* BrowserEmojiCategoryBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDAA643C0EAFBAC0EC389B68 /* BrowserEmojiCategoryBar.swift */; };
 		44D094F5EF4F29804284FCCE /* BrowserTabDragItem+SidebarReorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C5CC6F63BFAAC551F54AB4 /* BrowserTabDragItem+SidebarReorder.swift */; };
 		44D099A4D641D52A55EA6431 /* BrowserAgentFailure.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE888D5D31D33CCE9ADB0148 /* BrowserAgentFailure.swift */; };
@@ -4237,6 +4234,7 @@
 		53A9782704429C112AA21938 /* BrowserPrivacySettingsLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B1C1E894DB445B87CF57EF /* BrowserPrivacySettingsLayout.swift */; };
 		53AF61211B2F45ECD4397FAF /* CrestFormControlRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28DF1BB6E0CE256A6032FBFE /* CrestFormControlRow.swift */; };
 		53B49960B39AA10C98A95E5B /* BrowserQuickWindowRequestLifecycle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77C81D41A97B32DFE73F4B90 /* BrowserQuickWindowRequestLifecycle.swift */; };
+		53B7CE443C9A7801E98BA8BC /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38203FBE05ACDAFE4F3DCCEA /* main.swift */; };
 		53C39065B1421DC0AAB04360 /* BrowserNavigationFailureContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22622EE050B7384CAC501AD6 /* BrowserNavigationFailureContent.swift */; };
 		53C3E4DD12F5EA8B7BFC2136 /* CloudSyncStepKind+Performer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD6347356322EEC586B43538 /* CloudSyncStepKind+Performer.swift */; };
 		53CBBC64F8B338A00F544FC3 /* BrowserDownloadDestinationCancelled.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BD897B39A83E55B85DEF09C /* BrowserDownloadDestinationCancelled.swift */; };
@@ -4423,7 +4421,6 @@
 		5803634752572C762C1F6DF1 /* BrowserUtilityListClock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 631FDA54DA02485B89528E06 /* BrowserUtilityListClock.swift */; };
 		58058815CFD616AAAADE741C /* ImportSpaceNames+Resolving.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9861056CA90CCA37A52AD64 /* ImportSpaceNames+Resolving.swift */; };
 		5807740AE178282FD84F18B5 /* BrowserStoreModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = D97C04994639F47376E2C56A /* BrowserStoreModels.swift */; };
-		580BCD1D3EAD994B3C000E2C /* OnePasswordAccountReading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C06ABC11DAAC79CDD7A4F45 /* OnePasswordAccountReading.swift */; };
 		5812443EE41C6082184798AC /* MediaSessionPageCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A0AB987E27E471AAB01CA3 /* MediaSessionPageCoordinator.swift */; };
 		5816D6C0FB7D3704D23400B5 /* CrestRiver.icon in Resources */ = {isa = PBXBuildFile; fileRef = CFAE84B10342CD4905C98A46 /* CrestRiver.icon */; };
 		581872A58510C4AFDC06CC29 /* BrowserCommandPaletteMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A691D76B0806DD9B3E11B76 /* BrowserCommandPaletteMode.swift */; };
@@ -4967,7 +4964,6 @@
 		626D62657F20E14E681A4B80 /* BrowserTabSelectionInteraction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EBDD011ADF10D1CE8F91129 /* BrowserTabSelectionInteraction.swift */; };
 		62777FE71D84A6DC9B3A2A8C /* BrowserNavigationFailureBackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50395542FBF9EC49D1633BD4 /* BrowserNavigationFailureBackButton.swift */; };
 		627A9BD1B06F42507A5F4C1D /* BrowserUtilityListRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55BFB83D7CB3AB34A03DAE12 /* BrowserUtilityListRow.swift */; };
-		627C8BAF91A55477B7CB13E0 /* OnePasswordDesktopLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78966572D700BCC4C0472B86 /* OnePasswordDesktopLibrary.swift */; };
 		628692C69B0F7A5631E19111 /* PageFailure+URLs.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE27E631EE36F0F6FF48491C /* PageFailure+URLs.swift */; };
 		6286D2B2E4E5F063D08487DF /* BrowserLookAndFeelDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F6432A8CB22B80EA3506DE /* BrowserLookAndFeelDefaults.swift */; };
 		6287D78F62B0B9758E662D2D /* AuthenticationHandling+Responder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1486FBB9F21032803A7A6B18 /* AuthenticationHandling+Responder.swift */; };
@@ -5638,6 +5634,7 @@
 		70FA7B933EB3779027CBA276 /* BrowserPeekDestinationMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C2B929B670DA297A39A32A /* BrowserPeekDestinationMenu.swift */; };
 		70FFD16CA4CDB2D497D08004 /* BrowserSidebarCustomizationPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2BA99521C470EB3DE84B2B4 /* BrowserSidebarCustomizationPreview.swift */; };
 		7101662B9DCB14AA7400BD59 /* SearchProvider+Identity.swift in Sources */ = {isa = PBXBuildFile; fileRef = D56306721563871318800F0F /* SearchProvider+Identity.swift */; };
+		7108E054C36D7A84418A5985 /* CrestOnePasswordHelper in Embed Dependencies */ = {isa = PBXBuildFile; fileRef = 0F7A421CB92253C5ACF40A45 /* CrestOnePasswordHelper */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		710CC9A195A3522CCE0FEB98 /* BrowserLookAndFeelPreviewMetrics.swift in Sources */ = {isa = PBXBuildFile; fileRef = C61E4A8C6EE839EA50F635FC /* BrowserLookAndFeelPreviewMetrics.swift */; };
 		710F0BE0912A5584B2E67823 /* BrowserBlockedPopupNotice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1016087E1A8F980892C3F1BB /* BrowserBlockedPopupNotice.swift */; };
 		710F69B82EA8F8C0C678366C /* BrowserSpaceThemeField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6367C9231A1258FACA177D77 /* BrowserSpaceThemeField.swift */; };
@@ -6426,7 +6423,6 @@
 		80F5924BC9E8092E28D87BF9 /* BrowserDefaultPageZoomSettingsSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041D04DB15B99F5132CC18B9 /* BrowserDefaultPageZoomSettingsSection.swift */; };
 		81069DEC167018900FC991F2 /* BrowserTabIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED6665206469AED04127FBCC /* BrowserTabIcon.swift */; };
 		8106D20A2E94502EA7C2C434 /* BrowserSplitPanelLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB83E112C7D96ECC3CF862C3 /* BrowserSplitPanelLayout.swift */; };
-		810ADCD1B153AEAAA396618E /* OnePasswordCommandLineClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = A62B545BA00C4A7AF2665ED8 /* OnePasswordCommandLineClient.swift */; };
 		810B993B5B8D3BFC04181FBC /* BrowserAgentAsking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 195AC4879241F92F523526EC /* BrowserAgentAsking.swift */; };
 		810CAE08A8B52EA978B63A6E /* SidebarChrome.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA2E5A4D1339BBEAE46596D7 /* SidebarChrome.swift */; };
 		810D9B3E0965CF440BF721BF /* InfoBarShown+ChromiumEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ABF7EF2D7239286E5F23BB8 /* InfoBarShown+ChromiumEngine.swift */; };
@@ -6708,7 +6704,6 @@
 		8719E15674A4E73B77FE664D /* BrowserSidebarWidgetCarouselDirection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97F70987323CC1184C2CD16D /* BrowserSidebarWidgetCarouselDirection.swift */; };
 		87234EC2C97869692A36E94F /* BrowserPlatformEmojiVariantModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70FA374AA8D591A071BA2FFF /* BrowserPlatformEmojiVariantModifier.swift */; };
 		872467D1FF5157170CB65A35 /* BrowserDataPortabilityProgressStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13EAEC41F8D6DA88C54CCE55 /* BrowserDataPortabilityProgressStatus.swift */; };
-		87399CA8CB79C8A3F729D942 /* OnePasswordCommandLineClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = A62B545BA00C4A7AF2665ED8 /* OnePasswordCommandLineClient.swift */; };
 		873B271506102A3DB882B336 /* BrowserLivePageContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F2C2FFF58F8FB9611520213 /* BrowserLivePageContent.swift */; };
 		87467CDF9C1ECD4AD01D0E6A /* BrowserUtilityListRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55BFB83D7CB3AB34A03DAE12 /* BrowserUtilityListRow.swift */; };
 		874D5A838FF8B224650BB3EE /* WebKitEngineBinding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F3FFB6E9E6D88191F8CF00E /* WebKitEngineBinding.swift */; };
@@ -7734,6 +7729,7 @@
 		9C14A8D2EF1EDB374548A5AF /* BrowserGettingStartedTabAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D8E29435A9331BFD4CA0271 /* BrowserGettingStartedTabAdapter.swift */; };
 		9C2A993055D5FF61E360D963 /* BrowserWindowTitleBarGuard.swift in Sources */ = {isa = PBXBuildFile; fileRef = F102D8BCB3368E0B69C53407 /* BrowserWindowTitleBarGuard.swift */; };
 		9C2BAB12A541ADB0AC18E43A /* BrowserDeviceAuthenticating.swift in Sources */ = {isa = PBXBuildFile; fileRef = B809FBC2A04A7D69A7D98967 /* BrowserDeviceAuthenticating.swift */; };
+		9C2F267B14E4D4C50BB9CBB6 /* OnePasswordDesktopBridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DE3F10A3647A973FAF4EBB5 /* OnePasswordDesktopBridge.swift */; };
 		9C356CA3078F2F92A5EBF18D /* BrowserSystemSymbolCatalog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2996BCB043E4016DE2514C28 /* BrowserSystemSymbolCatalog.swift */; };
 		9C3EE8D6ACCE3D58C2E167C1 /* EnginePresentation+EnginePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 367B24882BD32E40F70BD676 /* EnginePresentation+EnginePage.swift */; };
 		9C4130BD8A0A4C77E0D5F145 /* RecentTabSwitcherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2C02678D21E73E4FFD3D86C /* RecentTabSwitcherView.swift */; };
@@ -7756,7 +7752,6 @@
 		9CA526A5548124FBD81AE953 /* BrowserSpaceSwitcherLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F19027FD6E649F9E52B1754 /* BrowserSpaceSwitcherLayout.swift */; };
 		9CAED13256587D7E386781A5 /* BrowserTranslationPreference.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D0C2D74F275786D3BD0B4E2 /* BrowserTranslationPreference.swift */; };
 		9CB338E61517E5C82A4E102E /* BrowserAgentConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5285B8AE3136575C15C00FF2 /* BrowserAgentConnection.swift */; };
-		9CB43CA1B0AD84724437F094 /* OnePasswordAccountReading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C06ABC11DAAC79CDD7A4F45 /* OnePasswordAccountReading.swift */; };
 		9CB82696BE6BB406BA6AE84D /* BrowserSidebarWidgetPreferenceStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = B419B0E1EEEE762ABB68B2CB /* BrowserSidebarWidgetPreferenceStore.swift */; };
 		9CB904BF138EC6C05B511611 /* BrowserOnboardingReviewSpacePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B70C87DB4AE7B0462AFD48F2 /* BrowserOnboardingReviewSpacePage.swift */; };
 		9CBDED877D30C10D5B142A1C /* BrowserSidebarWidgetInstanceLimit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5588C2EDDEDF97296C6E967B /* BrowserSidebarWidgetInstanceLimit.swift */; };
@@ -7769,7 +7764,6 @@
 		9CDA1BAC23754B4B13FED872 /* BrowserPromptPresenting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ABA4F8CE5CE3C7E0B417085 /* BrowserPromptPresenting.swift */; };
 		9CE7514A468C430D4F4A70CE /* BrowserSharedLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 622FF9A6C131006EC9E9481D /* BrowserSharedLink.swift */; };
 		9CF21721C545E259F777302C /* InstalledExtensions+WebKitEnginePages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67640304D98443F7D132103A /* InstalledExtensions+WebKitEnginePages.swift */; };
-		9CF53E9B20EE49FF965F294A /* OnePasswordCommandLineClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = A62B545BA00C4A7AF2665ED8 /* OnePasswordCommandLineClient.swift */; };
 		9D00C569C802FAACAF6C9DE5 /* WebKitAgentActivityHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5485E947C8095C26245127A8 /* WebKitAgentActivityHandler.swift */; };
 		9D11D65EE42DF65FE5867185 /* BrowserSidebarSplitGroupRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 693FFAE51FFD5DB2A18FE48A /* BrowserSidebarSplitGroupRow.swift */; };
 		9D1AFD5B29C0CEA52808438E /* BrowserStoreModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = D97C04994639F47376E2C56A /* BrowserStoreModels.swift */; };
@@ -10530,7 +10524,6 @@
 		D5881A649AEFBC0732F23831 /* RecoverPage+WebKitEngineBinding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C92A99ECC6B1728829D2070 /* RecoverPage+WebKitEngineBinding.swift */; };
 		D58C2FC6F1EED81561E70B10 /* RemoveEngineDownload+WebKitEngineBinding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 633D6B46B904904218AD7FD9 /* RemoveEngineDownload+WebKitEngineBinding.swift */; };
 		D59699768302549972A766FB /* ShowBlockedPopups+WebKitEnginePages.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA8D2A5CC3E3014BF0458358 /* ShowBlockedPopups+WebKitEnginePages.swift */; };
-		D599FE5F0332B24EC1653027 /* OnePasswordAccountReading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C06ABC11DAAC79CDD7A4F45 /* OnePasswordAccountReading.swift */; };
 		D5A2296C602A5C8F51FF8EAB /* BrowserEngineInfoBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC45B563C3C5D77EBB4C6A2C /* BrowserEngineInfoBar.swift */; };
 		D5A4589716E373590D5C86EF /* BrowserSpaceBrowsingSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC4ED49E300D7D00CD03738F /* BrowserSpaceBrowsingSection.swift */; };
 		D5B20F87A1330F0BD65103EF /* BrowserSidebarToggleTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4419FC70E6CFD4CAF6CE055 /* BrowserSidebarToggleTarget.swift */; };
@@ -11820,6 +11813,7 @@
 		EF2BC2197411A314BB529650 /* BrowserSiteControlMetrics.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECBF1F7E1D5622DCC168709D /* BrowserSiteControlMetrics.swift */; };
 		EF2FABC53C3CF9398F3D9177 /* BrowserUtilitySurface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29FC3DE5804B3FF689706F4E /* BrowserUtilitySurface.swift */; };
 		EF30603B93E38A7674C98846 /* StopLoading+WebKitEnginePages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3537ABC3A184853E8C06D689 /* StopLoading+WebKitEnginePages.swift */; };
+		EF31943B46B4FA923531CE2D /* OnePasswordDesktopBridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DE3F10A3647A973FAF4EBB5 /* OnePasswordDesktopBridge.swift */; };
 		EF3A8D10AB0ECC50D9B7F230 /* BrowserPageLinkClipboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719116366F6B5EA2A5A21ABC /* BrowserPageLinkClipboard.swift */; };
 		EF3C8C39841DEB6C49A009F2 /* BrowserSpaceChevronLowerBannerShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01B579F2EA7B822FB85ACD87 /* BrowserSpaceChevronLowerBannerShape.swift */; };
 		EF3EE6C57345972CD69BEC8A /* BrowserWebsiteDataList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03844094396C6EAFBBD18AD8 /* BrowserWebsiteDataList.swift */; };
@@ -11903,6 +11897,7 @@
 		F0F0E199E0472DD51DAA6AE2 /* ReaderModeSnapshotDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D4244EEFC6E674E7C7B68F4 /* ReaderModeSnapshotDecoder.swift */; };
 		F0F7C5CD8AECD6C7DFBAA9DB /* BrowserGeolocationCancelAll.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0DF78E38D0123434AEEB84E /* BrowserGeolocationCancelAll.swift */; };
 		F0FA7188E9A1E1EB83181E65 /* BrowserPeekActionBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEECAB7802FC9B247EB1074C /* BrowserPeekActionBar.swift */; };
+		F0FE09998A6F7FFA4A35C832 /* OnePasswordDesktopBridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DE3F10A3647A973FAF4EBB5 /* OnePasswordDesktopBridge.swift */; };
 		F0FFCB2013F5E4AC83828AD6 /* BrowserSpaceSettingsSectionModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E234C125A796E4F4A390282 /* BrowserSpaceSettingsSectionModels.swift */; };
 		F10253DEBB6FC159E7A3CDF7 /* BrowserStore+GettingStarted.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB73EF72A02791BC440E7EF /* BrowserStore+GettingStarted.swift */; };
 		F108C7810586DE9D27D9189C /* BrowserCloudSyncModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7356913D08BC966E1A767581 /* BrowserCloudSyncModels.swift */; };
@@ -12157,7 +12152,6 @@
 		F654E44C8F853ABD318B8A38 /* DownloadsRemoved+CoreState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 324AF2F59934A43CAD5FF076 /* DownloadsRemoved+CoreState.swift */; };
 		F658E1616A303D5D3C4CFADC /* BrowserSpaceThemeField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6367C9231A1258FACA177D77 /* BrowserSpaceThemeField.swift */; };
 		F65A7B9D548E21601A05317F /* BrowserGeolocationPositionRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34CD3C447FC34DB6A4674082 /* BrowserGeolocationPositionRequest.swift */; };
-		F65C3CCB826A665370965989 /* OnePasswordDesktopLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78966572D700BCC4C0472B86 /* OnePasswordDesktopLibrary.swift */; };
 		F66336F937F958BED2909753 /* BrowserMacWindows.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814B46FC2E4BBAB99B389889 /* BrowserMacWindows.swift */; };
 		F664925BC3A29DC0898E3514 /* RecentTabSwitcherSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4EAEB689DB41CD0AC4E4DDD /* RecentTabSwitcherSession.swift */; };
 		F665C3B077BD5D4104A3648E /* BrowserEmptySelectionPaletteActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56FAFE3AC2BA6106CD66FB85 /* BrowserEmptySelectionPaletteActions.swift */; };
@@ -12639,6 +12633,13 @@
 			remoteGlobalIDString = 4356C4DA52CAE7524DEB0A38;
 			remoteInfo = CrestDockTilePlugin;
 		};
+		2D8014A6425FDAFAFBBA74FE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6027AE677E6026C03E785E24 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 12FDC206FFFE8192EE4F6250;
+			remoteInfo = CrestOnePasswordHelper;
+		};
 		3661E7E92C563E14D25E7D52 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 6027AE677E6026C03E785E24 /* Project object */;
@@ -12770,6 +12771,7 @@
 			dstSubfolderSpec = 1;
 			files = (
 				602EA1C48DA886AF37165D05 /* CrestBrowserHelper in Embed Dependencies */,
+				7108E054C36D7A84418A5985 /* CrestOnePasswordHelper in Embed Dependencies */,
 			);
 			name = "Embed Dependencies";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -12931,6 +12933,7 @@
 		0F47A0163DD16BF07D8818E4 /* BrowserChromiumFeatureFlagSettingsPane.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowserChromiumFeatureFlagSettingsPane.swift; sourceTree = "<group>"; };
 		0F5AFA632B0B029EBB899FCA /* BrowserQuickWindowGeometryHostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowserQuickWindowGeometryHostView.swift; sourceTree = "<group>"; };
 		0F68D92E05407CCE36FB62A5 /* CrestNativeCore.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CrestNativeCore.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0F7A421CB92253C5ACF40A45 /* CrestOnePasswordHelper */ = {isa = PBXFileReference; includeInIndex = 0; path = CrestOnePasswordHelper; sourceTree = BUILT_PRODUCTS_DIR; };
 		0FAB8E06DD94BC2CD494FED1 /* ChallengeHandling+Answer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ChallengeHandling+Answer.swift"; sourceTree = "<group>"; };
 		0FAF64DA9DE11E8E643CF57D /* WireCoding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WireCoding.swift; sourceTree = "<group>"; };
 		0FC150BEE8212AE21FADC8D7 /* Engines.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Engines.swift; sourceTree = "<group>"; };
@@ -13342,6 +13345,7 @@
 		37F2133AD791919D0A497D9E /* BrowserSpaceBannerField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowserSpaceBannerField.swift; sourceTree = "<group>"; };
 		37FC3427D76EADABB6A29374 /* MobileBrowserSidebarPreviewFixture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobileBrowserSidebarPreviewFixture.swift; sourceTree = "<group>"; };
 		3803CECCDF80CFD932B92D66 /* BrowserWindowStateStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowserWindowStateStore.swift; sourceTree = "<group>"; };
+		38203FBE05ACDAFE4F3DCCEA /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		382A182A5AD7F53DD0BC38B4 /* MobileRegularBrowserLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobileRegularBrowserLayout.swift; sourceTree = "<group>"; };
 		388276DC74E0DCC56665FCBD /* BrowserNavigationPolicyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowserNavigationPolicyTests.swift; sourceTree = "<group>"; };
 		3891FB34BB33F38038CE1F6A /* MobileBrowserDownloads.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobileBrowserDownloads.swift; sourceTree = "<group>"; };
@@ -14024,7 +14028,6 @@
 		78538AC48F17897E1B363775 /* BrowserSiteControlContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowserSiteControlContent.swift; sourceTree = "<group>"; };
 		787D7E3CD66F5832D0CB39EE /* ChromiumShellHost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChromiumShellHost.swift; sourceTree = "<group>"; };
 		78851F93D290AD7DF1957DDF /* BrowserSpaceIconSizing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowserSpaceIconSizing.swift; sourceTree = "<group>"; };
-		78966572D700BCC4C0472B86 /* OnePasswordDesktopLibrary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnePasswordDesktopLibrary.swift; sourceTree = "<group>"; };
 		78A0B462469BACF10FF4D0AC /* BrowserSoftwareUpdateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowserSoftwareUpdateTests.swift; sourceTree = "<group>"; };
 		78B328D5D22C5894E1BFF4FA /* BrowserSavedLocationRestoreAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowserSavedLocationRestoreAction.swift; sourceTree = "<group>"; };
 		78D825B43A61A66458CFA2B3 /* BrowserMediaSessionPlaybackState+Core.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BrowserMediaSessionPlaybackState+Core.swift"; sourceTree = "<group>"; };
@@ -14376,7 +14379,6 @@
 		9C0222B74A3F857903C9D300 /* BrowserSoftwareUpdateActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowserSoftwareUpdateActions.swift; sourceTree = "<group>"; };
 		9C069049E263B54464DFD389 /* BrowserPlatformUserAgent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowserPlatformUserAgent.swift; sourceTree = "<group>"; };
 		9C06954B7728666C1A0254B5 /* BrowserStore+SessionSeed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BrowserStore+SessionSeed.swift"; sourceTree = "<group>"; };
-		9C06ABC11DAAC79CDD7A4F45 /* OnePasswordAccountReading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnePasswordAccountReading.swift; sourceTree = "<group>"; };
 		9C1CE0256489CC8882E72633 /* CloudUploadSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudUploadSource.swift; sourceTree = "<group>"; };
 		9C1EC2CA330515BEDB0A60A2 /* BrowserPageThemeColorChanged.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowserPageThemeColorChanged.swift; sourceTree = "<group>"; };
 		9C7F33648D82DB7B03749E09 /* BrowserPinnedTabsDropSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowserPinnedTabsDropSection.swift; sourceTree = "<group>"; };
@@ -14391,6 +14393,7 @@
 		9D87445D4964E138CF21B711 /* BrowserOnboardingCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowserOnboardingCoordinator.swift; sourceTree = "<group>"; };
 		9D984B0C500A4C18F0B158F2 /* ObserveAudioSpectrum+WebKitEnginePages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ObserveAudioSpectrum+WebKitEnginePages.swift"; sourceTree = "<group>"; };
 		9DE2D2C694C179BC02E2D504 /* ChromiumApplication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChromiumApplication.swift; sourceTree = "<group>"; };
+		9DE3F10A3647A973FAF4EBB5 /* OnePasswordDesktopBridge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnePasswordDesktopBridge.swift; sourceTree = "<group>"; };
 		9DFCC40EDA7FC5E728440565 /* BrowserHostedNotificationPermissionQuery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowserHostedNotificationPermissionQuery.swift; sourceTree = "<group>"; };
 		9E0FD67FFD8980631814FC4F /* BrowserCredentialErrorSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowserCredentialErrorSection.swift; sourceTree = "<group>"; };
 		9E31897097F241F58D7563E4 /* MobileBrowserPage+WKUIDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MobileBrowserPage+WKUIDelegate.swift"; sourceTree = "<group>"; };
@@ -14490,7 +14493,6 @@
 		A5EDF8BDD939FFCF78A57CE9 /* BrowserDataRetentionChange.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowserDataRetentionChange.swift; sourceTree = "<group>"; };
 		A616DBA5976C4D6A7167D6CD /* BrowserCredentialUpdatePlan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowserCredentialUpdatePlan.swift; sourceTree = "<group>"; };
 		A6264116999E7847DC079EA4 /* SidePanelRequested+ChromiumEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SidePanelRequested+ChromiumEngine.swift"; sourceTree = "<group>"; };
-		A62B545BA00C4A7AF2665ED8 /* OnePasswordCommandLineClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnePasswordCommandLineClient.swift; sourceTree = "<group>"; };
 		A646957EDCD550F0122DF484 /* InspectorPanel+WebInspector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "InspectorPanel+WebInspector.swift"; sourceTree = "<group>"; };
 		A69E65CD51E44AA83AB463AF /* MobileBrowserSidebarModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobileBrowserSidebarModels.swift; sourceTree = "<group>"; };
 		A6DE5392C4DE626D5456E652 /* DownloadQuarantine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadQuarantine.swift; sourceTree = "<group>"; };
@@ -19238,10 +19240,8 @@
 			isa = PBXGroup;
 			children = (
 				D08FC3A264EAF7F879265FB3 /* BrowserOnePasswordCredentialSource.swift */,
-				9C06ABC11DAAC79CDD7A4F45 /* OnePasswordAccountReading.swift */,
-				A62B545BA00C4A7AF2665ED8 /* OnePasswordCommandLineClient.swift */,
+				9DE3F10A3647A973FAF4EBB5 /* OnePasswordDesktopBridge.swift */,
 				D4E9447E93770287CB88DAF6 /* OnePasswordDesktopClient.swift */,
-				78966572D700BCC4C0472B86 /* OnePasswordDesktopLibrary.swift */,
 				C7A8B498FD3C6486EE2DCB1B /* OnePasswordWebsite.swift */,
 			);
 			path = OnePassword;
@@ -20081,6 +20081,7 @@
 				F8EF8D51CF94899E9F51BF12 /* CrestNativeCore.app */,
 				0F68D92E05407CCE36FB62A5 /* CrestNativeCore.app */,
 				2E9B156E3539F823411873D0 /* CrestNativeCoreTests.xctest */,
+				0F7A421CB92253C5ACF40A45 /* CrestOnePasswordHelper */,
 				2217BC8E9C250AE57B8AF12E /* CrestShareExtension.appex */,
 				0A34E8049B785BD0FD697D24 /* CrestTests.xctest */,
 			);
@@ -20670,6 +20671,7 @@
 				12263D703FCC22A7BFC5BEE2 /* CrestMac */,
 				617535F69F4C71DEAF574386 /* CrestMobile */,
 				ED8A67635F9781BDCAE1CA6B /* CrestMobileTests */,
+				E0E913F6338774A060936B1B /* CrestOnePasswordHelper */,
 				79FBA76F51C230941F7F8C8A /* CrestShared */,
 				28EEF758EC982438749E3BA0 /* CrestShareExtension */,
 				01E4CD6EC3375F88226096C3 /* CrestTests */,
@@ -23830,6 +23832,14 @@
 			path = Geolocation;
 			sourceTree = "<group>";
 		};
+		E0E913F6338774A060936B1B /* CrestOnePasswordHelper */ = {
+			isa = PBXGroup;
+			children = (
+				38203FBE05ACDAFE4F3DCCEA /* main.swift */,
+			);
+			path = CrestOnePasswordHelper;
+			sourceTree = "<group>";
+		};
 		E227B5DA5CD24A89F0041A9B /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -25015,6 +25025,23 @@
 			productReference = A7568D5F7CD1A1CC9852DE47 /* CrestChromiumUI.framework */;
 			productType = "com.apple.product-type.framework";
 		};
+		12FDC206FFFE8192EE4F6250 /* CrestOnePasswordHelper */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D690A3045BAD55267137BF4E /* Build configuration list for PBXNativeTarget "CrestOnePasswordHelper" */;
+			buildPhases = (
+				0E9F0C07ABDEDF761F2F66D9 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CrestOnePasswordHelper;
+			packageProductDependencies = (
+			);
+			productName = CrestOnePasswordHelper;
+			productReference = 0F7A421CB92253C5ACF40A45 /* CrestOnePasswordHelper */;
+			productType = "com.apple.product-type.tool";
+		};
 		321819CE93FADB5156A5A1DC /* CrestNativeCore */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = CCC7606C5A5801E1169E7EF1 /* Build configuration list for PBXNativeTarget "CrestNativeCore" */;
@@ -25163,6 +25190,7 @@
 			dependencies = (
 				E66C0752B72DD6EFD152B2AD /* PBXTargetDependency */,
 				48B1D7C1BBCF000F63E61677 /* PBXTargetDependency */,
+				B8F7E63FD3BB54268137EB90 /* PBXTargetDependency */,
 			);
 			name = Crest;
 			packageProductDependencies = (
@@ -25251,6 +25279,10 @@
 						DevelopmentTeam = 7D9LXJ8749;
 						ProvisioningStyle = Automatic;
 					};
+					12FDC206FFFE8192EE4F6250 = {
+						DevelopmentTeam = 7D9LXJ8749;
+						ProvisioningStyle = Automatic;
+					};
 					321819CE93FADB5156A5A1DC = {
 						DevelopmentTeam = 7D9LXJ8749;
 						ProvisioningStyle = Automatic;
@@ -25321,6 +25353,7 @@
 				A15FDC6470C477C0C71DE608 /* CrestNativeCoreTests */,
 				ADA9BA9F3D6E69D3F8FBB95C /* Crest */,
 				46B0D0C971890F8BC88AF730 /* CrestBrowserHelper */,
+				12FDC206FFFE8192EE4F6250 /* CrestOnePasswordHelper */,
 				4356C4DA52CAE7524DEB0A38 /* CrestDockTilePlugin */,
 				412EB9963F05DC0CBBBC33B0 /* CrestTests */,
 				C12D338E727EE8486BB3B0EA /* CrestMobileNativeCore */,
@@ -27592,10 +27625,8 @@
 				12769AD7372444558D4603CF /* ObservedSet.swift in Sources */,
 				BAF71F39922F0E8B3641CCBF /* OfferedPageAdopted+CoreState.swift in Sources */,
 				A2C713039E69D03804F959DA /* OfferedWindowAdopted+CoreState.swift in Sources */,
-				D599FE5F0332B24EC1653027 /* OnePasswordAccountReading.swift in Sources */,
-				9CF53E9B20EE49FF965F294A /* OnePasswordCommandLineClient.swift in Sources */,
+				EF31943B46B4FA923531CE2D /* OnePasswordDesktopBridge.swift in Sources */,
 				EF9D6F9931E2E7482F111FC0 /* OnePasswordDesktopClient.swift in Sources */,
-				0D6BA8B65549E4DA4211EE5C /* OnePasswordDesktopLibrary.swift in Sources */,
 				7309ED46161ECE36F38F5C1A /* OnePasswordWebsite.swift in Sources */,
 				0E111F2F842D15902189F0F1 /* OpenInspector+WebKitEnginePages.swift in Sources */,
 				8707F09992DE20C0B61153FC /* PageCaptured+EnginePage.swift in Sources */,
@@ -27908,6 +27939,14 @@
 				9D6A85DD1AD5FF495FB98510 /* WorkspaceModel.swift in Sources */,
 				A0E8B9A821BF69A3D70759D9 /* WorkspaceOpened+CoreState.swift in Sources */,
 				D2CF0187BFB30DF296DAD419 /* ZoomPage+WebKitEnginePages.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0E9F0C07ABDEDF761F2F66D9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				53B7CE443C9A7801E98BA8BC /* main.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -31656,10 +31695,8 @@
 				D0CB468C737522C9F300AA7D /* ObservedSet.swift in Sources */,
 				7954F028F624BE825A1A9A43 /* OfferedPageAdopted+CoreState.swift in Sources */,
 				965837C8BB8FD7BBDC727301 /* OfferedWindowAdopted+CoreState.swift in Sources */,
-				9CB43CA1B0AD84724437F094 /* OnePasswordAccountReading.swift in Sources */,
-				87399CA8CB79C8A3F729D942 /* OnePasswordCommandLineClient.swift in Sources */,
+				F0FE09998A6F7FFA4A35C832 /* OnePasswordDesktopBridge.swift in Sources */,
 				3C38F57D8EC2FEFE6D97116F /* OnePasswordDesktopClient.swift in Sources */,
-				24283667D4D2D38A48DD85A1 /* OnePasswordDesktopLibrary.swift in Sources */,
 				8B4C5B100A2DB1BD06A960CB /* OnePasswordWebsite.swift in Sources */,
 				BDC042F1072725E0FBFB6684 /* OpenInspector+WebKitEnginePages.swift in Sources */,
 				3D5329F7B1C7224D6C2C08BE /* PageCaptured+EnginePage.swift in Sources */,
@@ -33934,10 +33971,8 @@
 				4AF40C2EDE7D34F54DB2C215 /* ObservedSet.swift in Sources */,
 				06AE778A3F930BB4211F937E /* OfferedPageAdopted+CoreState.swift in Sources */,
 				DD2D7EA3D50154462E4EE168 /* OfferedWindowAdopted+CoreState.swift in Sources */,
-				238F713A1CBDA3D661D78BBC /* OnePasswordAccountReading.swift in Sources */,
-				810ADCD1B153AEAAA396618E /* OnePasswordCommandLineClient.swift in Sources */,
+				9C2F267B14E4D4C50BB9CBB6 /* OnePasswordDesktopBridge.swift in Sources */,
 				AB34B47279B13EC2DB719F16 /* OnePasswordDesktopClient.swift in Sources */,
-				F65C3CCB826A665370965989 /* OnePasswordDesktopLibrary.swift in Sources */,
 				B7AD0AF06015F4918A5278B5 /* OnePasswordWebsite.swift in Sources */,
 				76FD9CD0BD83EB420F212359 /* OpenInspector+WebKitEnginePages.swift in Sources */,
 				99A72D8380DD57AF7BDFDD02 /* PageCaptured+EnginePage.swift in Sources */,
@@ -37909,10 +37944,8 @@
 				9BD1F6691FD62AAA85489FA4 /* ObservedSet.swift in Sources */,
 				A5DD8194718864E4F1EA1C9C /* OfferedPageAdopted+CoreState.swift in Sources */,
 				B25FA4962272ED13D5301F74 /* OfferedWindowAdopted+CoreState.swift in Sources */,
-				580BCD1D3EAD994B3C000E2C /* OnePasswordAccountReading.swift in Sources */,
-				44C895337601E5B4A7D3B8BC /* OnePasswordCommandLineClient.swift in Sources */,
+				43211265D0423410A0643A4A /* OnePasswordDesktopBridge.swift in Sources */,
 				76BACFC7A9CB6A417D2DDA18 /* OnePasswordDesktopClient.swift in Sources */,
-				627C8BAF91A55477B7CB13E0 /* OnePasswordDesktopLibrary.swift in Sources */,
 				1137C455D8E528900B0DD67D /* OnePasswordWebsite.swift in Sources */,
 				B6F010FF4D4CFCF1619A5DC1 /* OpenInspector+WebKitEnginePages.swift in Sources */,
 				389675C303EC32AA1F997931 /* PageCaptured+EnginePage.swift in Sources */,
@@ -38241,6 +38274,11 @@
 			target = 4356C4DA52CAE7524DEB0A38 /* CrestDockTilePlugin */;
 			targetProxy = B5E4208801F2803684D2AD0A /* PBXContainerItemProxy */;
 		};
+		B8F7E63FD3BB54268137EB90 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 12FDC206FFFE8192EE4F6250 /* CrestOnePasswordHelper */;
+			targetProxy = 2D8014A6425FDAFAFBBA74FE /* PBXContainerItemProxy */;
+		};
 		BE239F8B29A90BCE5186E83E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 46B0D0C971890F8BC88AF730 /* CrestBrowserHelper */;
@@ -38294,6 +38332,26 @@
 				SWIFT_INCLUDE_PATHS = "$(PROJECT_DIR)/CrestContracts/include";
 			};
 			name = Debug;
+		};
+		1976D47FAC4463A41E75B02A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = CrestOnePasswordHelper/CrestOnePasswordHelper.entitlements;
+				COMBINE_HIDPI_IMAGES = YES;
+				CREATE_INFOPLIST_SECTION_IN_BINARY = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.k3nton.crest.onepassword-helper";
+				PRODUCT_MODULE_NAME = CrestOnePasswordHelper;
+				PRODUCT_NAME = "Crest 1Password Helper";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+			};
+			name = Release;
 		};
 		1B3C7A0D66C771F4BE1B8BE8 /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -38703,6 +38761,26 @@
 			};
 			name = Release;
 		};
+		B26C4B8A4699D33187B2D037 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = CrestOnePasswordHelper/CrestOnePasswordHelper.entitlements;
+				COMBINE_HIDPI_IMAGES = YES;
+				CREATE_INFOPLIST_SECTION_IN_BINARY = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.k3nton.crest.onepassword-helper";
+				PRODUCT_MODULE_NAME = CrestOnePasswordHelper;
+				PRODUCT_NAME = "Crest 1Password Helper";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+			};
+			name = Debug;
+		};
 		D60D68CA599F0A9FEC8DE188 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -39081,6 +39159,15 @@
 			buildConfigurations = (
 				162285763EBEAFB77CCF16A0 /* Debug */,
 				DCEBC38562676472861EC280 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		D690A3045BAD55267137BF4E /* Build configuration list for PBXNativeTarget "CrestOnePasswordHelper" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B26C4B8A4699D33187B2D037 /* Debug */,
+				1976D47FAC4463A41E75B02A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;

@@ -59,9 +59,8 @@ final class BrowserOnePasswordCredentialSource: BrowserExternalCredentialSource 
     }
 
     @ObservationIgnored private let defaults: UserDefaults
-    @ObservationIgnored private var clients: [String: any OnePasswordAccountReading] = [:]
-    /// The route to the app this process settled on, once a lookup needed one.
-    @ObservationIgnored private var route: Route?
+    @ObservationIgnored private let bridge = OnePasswordDesktopBridge()
+    @ObservationIgnored private var clients: [String: OnePasswordDesktopClient] = [:]
     @ObservationIgnored private var logins: [OnePasswordLogin] = []
     @ObservationIgnored private var loginsByID: [UUID: OnePasswordLogin] = [:]
     /// Each item keeps one identity across refreshes, so a prompt still open
@@ -91,6 +90,7 @@ final class BrowserOnePasswordCredentialSource: BrowserExternalCredentialSource 
         } catch {
             // The prompt still offers the Space's own passwords; settings say
             // why 1Password's are missing.
+            Self.log.error("1Password logins could not be read: \(String(describing: error), privacy: .public)")
             status = Self.status(for: error)
             throw error
         }
@@ -138,29 +138,24 @@ final class BrowserOnePasswordCredentialSource: BrowserExternalCredentialSource 
             status = BrowserExternalCredentialSourceStatus(
                 message: String(
                     localized:
-                        "Connected \(route?.description ?? ""): \(logins.count) logins from \(accountCount) \(accountCount == 1 ? "account" : "accounts")."
+                        "Connected: \(logins.count) logins from \(accountCount) \(accountCount == 1 ? "account" : "accounts")."
                 ),
                 needsAttention: false)
         } catch {
+            Self.log.error("1Password connection check failed: \(String(describing: error), privacy: .public)")
             status = Self.status(for: error)
         }
     }
 
     // MARK: - Actions - Index
 
-    /// The accounts the person listed, or with none listed, every account
-    /// the 1Password app reports through its CLI.
-    private func resolvedAccountNames() async throws -> [String] {
-        let listed =
-            accounts
+    /// The accounts the person listed, by the name at the top of 1Password's
+    /// sidebar, a sign-in address, or an account ID.
+    private var accountNames: [String] {
+        accounts
             .split(whereSeparator: { $0 == "," || $0.isNewline })
             .map { $0.trimmingCharacters(in: .whitespaces) }
             .filter { !$0.isEmpty }
-        if !listed.isEmpty { return listed }
-        guard let executable = OnePasswordCommandLineClient.installedExecutable() else {
-            throw SourceError.noAccounts
-        }
-        return try await OnePasswordCommandLineClient.accountNames(using: executable)
     }
 
     private func ensureIndex() async throws {
@@ -182,13 +177,13 @@ final class BrowserOnePasswordCredentialSource: BrowserExternalCredentialSource 
     }
 
     private func rebuildIndex() async throws {
-        let names = try await resolvedAccountNames()
+        let names = accountNames
         guard !names.isEmpty else { throw SourceError.noAccounts }
         var rebuilt: [OnePasswordLogin] = []
         var failure: (any Error)?
         for accountName in names {
             do {
-                let client = try client(for: accountName)
+                let client = client(for: accountName)
                 for overview in try await client.loginOverviews()
                 where overview.state != "archived" && !overview.websites.isEmpty {
                     let key = "\(accountName)\n\(overview.vaultId)\n\(overview.id)"
@@ -219,46 +214,13 @@ final class BrowserOnePasswordCredentialSource: BrowserExternalCredentialSource 
         offered = [:]
         indexedAt = nil
         clients = [:]
-        route = nil
     }
 
-    private func client(for accountName: String) throws -> any OnePasswordAccountReading {
+    private func client(for accountName: String) -> OnePasswordDesktopClient {
         if let client = clients[accountName] { return client }
-        let route = try self.route ?? Route.available()
-        self.route = route
-        let client = route.client(for: accountName)
+        let client = OnePasswordDesktopClient(accountName: accountName, bridge: bridge)
         clients[accountName] = client
         return client
-    }
-
-    /// How this process reaches the 1Password app: the integration library
-    /// the app ships for its SDKs, loaded into Crest where the process may
-    /// load it, or else the 1Password CLI as a separate program.
-    private enum Route {
-        case library(OnePasswordDesktopLibrary)
-        case commandLine(URL)
-
-        static func available() throws -> Route {
-            if let library = try? OnePasswordDesktopLibrary() { return .library(library) }
-            if let executable = OnePasswordCommandLineClient.installedExecutable() { return .commandLine(executable) }
-            throw OnePasswordDesktopError.noRoute
-        }
-
-        func client(for accountName: String) -> any OnePasswordAccountReading {
-            switch self {
-            case .library(let library):
-                OnePasswordDesktopClient(accountName: accountName, library: library)
-            case .commandLine(let executable):
-                OnePasswordCommandLineClient(accountName: accountName, executable: executable)
-            }
-        }
-
-        var description: String {
-            switch self {
-            case .library: String(localized: "through the 1Password app")
-            case .commandLine: String(localized: "through the 1Password CLI")
-            }
-        }
     }
 
     // MARK: - Actions - Fields
@@ -294,7 +256,7 @@ final class BrowserOnePasswordCredentialSource: BrowserExternalCredentialSource 
         case let error as OnePasswordDesktopError:
             message = error.message
         case SourceError.noAccounts:
-            message = String(localized: "Enter the 1Password accounts to fill from, or install the 1Password CLI.")
+            message = String(localized: "Enter the 1Password accounts to fill from.")
         default:
             message = String(localized: "Crest couldn’t reach 1Password.")
         }
