@@ -162,6 +162,36 @@ final class BrowserCredentialFormTests: XCTestCase {
         XCTAssertNotNil(focusMessages.first?["fieldRect"])
     }
 
+    func testEmailFirstSignInRaisesThePromptAndFillsOnlyTheAccount() async throws {
+        var focusMessages: [[String: Any]] = []
+        let webView = try await credentialBridgeWebView(
+            html: """
+                <!doctype html>
+                <style>input { display: block; width: 220px; height: 32px; }</style>
+                <form id="newsletter"><input id="newsletter-email" type="email" name="newsletter"></form>
+                <form id="identifier"><input id="account" type="email" autocomplete="username"></form>
+                """,
+            receive: { message in
+                if let body = message.body as? [String: Any], body["event"] as? String == "focus" {
+                    focusMessages.append(body)
+                }
+            })
+
+        let raisedForNewsletter = try await focusForTesting("#newsletter-email", in: webView)
+        let raisedForAccount = try await focusForTesting("#account", in: webView)
+        try await Task.sleep(for: .milliseconds(100))
+
+        XCTAssertFalse(raisedForNewsletter)
+        XCTAssertTrue(raisedForAccount)
+        XCTAssertEqual(focusMessages.count, 1)
+        let formID = try XCTUnwrap(focusMessages.first?["formID"] as? String)
+        let didFill = try await fill(formID: formID, username: "person@example.com", password: "unused", in: webView)
+        XCTAssertTrue(didFill)
+        let pageValues = try await pageJSON(
+            "return JSON.stringify({ account: document.querySelector('#account').value });", in: webView)
+        XCTAssertEqual(pageValues["account"] as? String, "person@example.com")
+    }
+
     private func focusForTesting(_ selector: String, in webView: WKWebView) async throws -> Bool {
         let value = try await webView.callAsyncJavaScript(
             "return globalThis.__crestCredentialBridge?.focusForTesting(selector) === true;",
