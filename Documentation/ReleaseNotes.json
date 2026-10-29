@@ -4597,6 +4597,10 @@
     "onepassword-helper-bridge": {
       "category": "internal",
       "message": "Crest reaches the 1Password app through a bundled helper that alone loads 1Password's SDK library, so Crest's own process keeps library validation, and no longer runs the 1Password CLI."
+    },
+    "password-prompt-on-username-fields": {
+      "category": "improved",
+      "message": "Crest's password suggestions also appear when you click the username field of a sign-in form, and Crest no longer offers to save a login it just filled when you sign in with it unchanged."
     }
   }
 }

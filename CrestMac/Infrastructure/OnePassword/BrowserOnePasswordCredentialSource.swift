@@ -34,6 +34,9 @@ final class BrowserOnePasswordCredentialSource: BrowserExternalCredentialSource 
     private static let indexLifetime: TimeInterval = 5 * 60
     /// How many matching items a suggestion reads for their usernames.
     private static let suggestionLimit = 8
+    /// How long one page's suggestions answer again without reading 1Password,
+    /// so moving from the username to the password field asks once.
+    private static let suggestionLifetime: TimeInterval = 60
     private static let log = Logger(subsystem: "com.pauldavis.crest", category: "OnePassword")
 
     // MARK: - Variables
@@ -70,6 +73,9 @@ final class BrowserOnePasswordCredentialSource: BrowserExternalCredentialSource 
     /// origin it was offered for, so a fill carries exactly what the prompt
     /// checks. They hold usernames, never passwords.
     @ObservationIgnored private var offered: [UUID: CredentialDescriptor] = [:]
+    /// The last suggestions for one origin in one Space, and when they were read.
+    @ObservationIgnored private var recentSuggestions:
+        (origin: CredentialOrigin, spaceID: UUID, readAt: Date, descriptors: [CredentialDescriptor])?
     @ObservationIgnored private var indexedAt: Date?
     @ObservationIgnored private var indexing: Task<Void, Never>?
 
@@ -85,6 +91,11 @@ final class BrowserOnePasswordCredentialSource: BrowserExternalCredentialSource 
 
     func descriptors(matching origin: CredentialOrigin, in spaceID: UUID) async throws -> [CredentialDescriptor] {
         guard isEnabled, origin.isSecure else { return [] }
+        if let recent = recentSuggestions, recent.origin == origin, recent.spaceID == spaceID,
+            Date().timeIntervalSince(recent.readAt) < Self.suggestionLifetime
+        {
+            return recent.descriptors
+        }
         do {
             try await ensureIndex()
         } catch {
@@ -109,6 +120,7 @@ final class BrowserOnePasswordCredentialSource: BrowserExternalCredentialSource 
             offered[login.id] = descriptor
             descriptors.append(descriptor)
         }
+        recentSuggestions = (origin, spaceID, Date(), descriptors)
         return descriptors
     }
 
@@ -212,6 +224,7 @@ final class BrowserOnePasswordCredentialSource: BrowserExternalCredentialSource 
         logins = []
         loginsByID = [:]
         offered = [:]
+        recentSuggestions = nil
         indexedAt = nil
         clients = [:]
     }
