@@ -202,6 +202,16 @@ enum BrowserCredentialContentBridge {
               || inputs.find((input) => input.type === "text" || input.type === "email");
           };
 
+          // A field that names the account a sign-in is for: marked as the
+          // username, or an email field whose name says it signs in. A
+          // newsletter or contact form's email field is neither.
+          const isAccountIdentifier = (input) => {
+            if (!["text", "email", "tel"].includes(input.type)) return false;
+            if (input.autocomplete.toLowerCase().split(/\s+/).includes("username")) return true;
+            const isEmail = input.type === "email" || input.autocomplete.toLowerCase().split(/\s+/).includes("email");
+            return isEmail && /login|log-in|signin|sign-in|user|account|identifier/i.test(`${input.name} ${input.id}`);
+          };
+
           const snapshot = (root, preferredPasswordInput = null) => {
             const selection = passwordSelection(root, preferredPasswordInput);
             if (!selection) return null;
@@ -308,8 +318,10 @@ enum BrowserCredentialContentBridge {
           // `input` is the field the prompt sits under: a password field, or
           // the username field of a form whose password field it reads.
           const reportFocus = (input, passwordInput = input) => {
-            const root = rootFor(passwordInput);
-            const fields = snapshot(root, passwordInput);
+            const root = rootFor(passwordInput || input);
+            const fields = passwordInput
+              ? snapshot(root, passwordInput)
+              : { formID: idFor(root), username: input.value?.trim() || "", passwordKind: "current" };
             if (!fields) return false;
             const rect = rectOf(input);
             trackedField = rect ? { input: new WeakRef(input), formID: fields.formID } : null;
@@ -340,7 +352,14 @@ enum BrowserCredentialContentBridge {
                 return false;
               }
               const passwordInput = passwordInputsIn(root).find((input) => passwordKind(input) === "current");
-              if (!passwordInput) return false;
+              if (!passwordInput) {
+                if (passwordInputsIn(root).length) return false;
+                const identifierInput = inputsIn(root).find((input) => isVisible(input) && isAccountIdentifier(input));
+                if (!identifierInput) return false;
+                setInputValue(identifierInput, username);
+                identifierInput.focus();
+                return true;
+              }
               const usernameInput = usernameInputIn(root, passwordInput);
               if (usernameInput) setInputValue(usernameInput, username);
               setInputValue(passwordInput, password);
@@ -372,8 +391,14 @@ enum BrowserCredentialContentBridge {
             if (!["text", "email", "tel"].includes(input.type)) return false;
             const root = rootFor(input);
             const passwordInput = passwordInputsIn(root).find((candidate) => passwordKind(candidate) === "current");
-            if (!passwordInput || usernameInputIn(root, passwordInput) !== input) return false;
-            return reportFocus(input, passwordInput);
+            if (passwordInput) {
+              if (usernameInputIn(root, passwordInput) !== input) return false;
+              return reportFocus(input, passwordInput);
+            }
+            // A sign-in that asks for the account first and its password on a
+            // later step. It travels as a step toward the current password.
+            if (passwordInputsIn(root).length || !isAccountIdentifier(input)) return false;
+            return reportFocus(input, null);
           };
 
           document.addEventListener("focusin", (event) => {

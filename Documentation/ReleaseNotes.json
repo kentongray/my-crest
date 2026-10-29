@@ -4601,6 +4601,10 @@
     "password-prompt-on-username-fields": {
       "category": "improved",
       "message": "Crest's password suggestions also appear when you click the username field of a sign-in form, and Crest no longer offers to save a login it just filled when you sign in with it unchanged."
+    },
+    "email-first-sign-in-suggestions": {
+      "category": "improved",
+      "message": "On sign-in pages that ask for your email or username before your password, Crest's password suggestions appear in that first field and fill just the account."
     }
   }
 }
