@@ -133,6 +133,45 @@ final class BrowserCredentialFormTests: XCTestCase {
         XCTAssertEqual(pageValues["password"] as? String, "filled-secret")
     }
 
+    func testSignInUsernameFieldRaisesThePromptAndOtherFieldsDoNot() async throws {
+        var focusMessages: [[String: Any]] = []
+        let webView = try await credentialBridgeWebView(
+            html: """
+                <!doctype html>
+                <style>input { display: block; width: 220px; height: 32px; }</style>
+                <input id="search" type="text">
+                <form id="login">
+                  <input id="login-user" autocomplete="username">
+                  <input id="login-password" type="password" autocomplete="current-password">
+                </form>
+                """,
+            receive: { message in
+                if let body = message.body as? [String: Any], body["event"] as? String == "focus" {
+                    focusMessages.append(body)
+                }
+            })
+
+        let raisedForUsername = try await focusForTesting("#login-user", in: webView)
+        let raisedForSearch = try await focusForTesting("#search", in: webView)
+        try await Task.sleep(for: .milliseconds(100))
+
+        XCTAssertTrue(raisedForUsername)
+        XCTAssertFalse(raisedForSearch)
+        XCTAssertEqual(focusMessages.count, 1)
+        XCTAssertEqual(focusMessages.first?["passwordKind"] as? String, "current")
+        XCTAssertNotNil(focusMessages.first?["fieldRect"])
+    }
+
+    private func focusForTesting(_ selector: String, in webView: WKWebView) async throws -> Bool {
+        let value = try await webView.callAsyncJavaScript(
+            "return globalThis.__crestCredentialBridge?.focusForTesting(selector) === true;",
+            arguments: ["selector": selector],
+            in: nil,
+            contentWorld: BrowserCredentialContentBridge.contentWorld
+        )
+        return try XCTUnwrap(value as? Bool)
+    }
+
     private func credentialBridgeWebView(
         html: String,
         receive: @escaping @MainActor (WKScriptMessage) -> Void = { _ in }

@@ -46,6 +46,7 @@ final class BrowserCredentialPageState<FillTarget> {
     @ObservationIgnored private var usernameExpirationTask: Task<Void, Never>?
     @ObservationIgnored private var pendingSaveCandidate: BrowserCredentialSaveCandidate?
     @ObservationIgnored private var candidateExpirationTask: Task<Void, Never>?
+    @ObservationIgnored private var filledLogin: BrowserCredentialFilledLogin?
 
     init(spaceID: UUID, core: CrestCore) {
         self.spaceID = spaceID
@@ -139,8 +140,9 @@ final class BrowserCredentialPageState<FillTarget> {
         return (request, target)
     }
 
-    func completeFill(username: String, requestID: UUID) {
+    func completeFill(username: String, password: String, requestID: UUID) {
         guard let request = fillRequest, request.id == requestID else { return }
+        filledLogin = BrowserCredentialFilledLogin(origin: request.origin, username: username, password: password)
         let facts = CredentialFormFacts(
             event: .filled, frameOrigin: request.origin, topLevelOrigin: request.topLevelOrigin,
             isMainFrame: request.fieldRect != nil, hasFormID: fillFormID != nil, hasUsername: true, hasPassword: false,
@@ -195,6 +197,7 @@ final class BrowserCredentialPageState<FillTarget> {
         dismissFillRequest()
         dismissSaveCandidate()
         clearUsernameHint()
+        filledLogin = nil
     }
 
     private func rememberUsername(
@@ -319,6 +322,13 @@ extension BrowserCredentialPageState: CredentialCapturePerformer {
             let password = message.password,
             let passwordKind = message.passwordKind
         else { return }
+        // A login Crest filled and the person submitted unchanged is already
+        // kept where it came from, so it is not offered again.
+        if filledLogin?.matches(origin: observation.frameOrigin, username: username, password: password) == true {
+            dismissFillRequest()
+            clearUsernameHint()
+            return
+        }
         dismissSaveCandidate()
         let candidate = BrowserCredentialSaveCandidate(
             id: UUID(),

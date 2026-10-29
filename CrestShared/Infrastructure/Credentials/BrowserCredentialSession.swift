@@ -76,7 +76,8 @@ final class BrowserCredentialSession {
         guard result as? Bool == true else {
             throw BrowserCredentialFillError.formChanged
         }
-        state.completeFill(username: credential.descriptor.username, requestID: requestID)
+        state.completeFill(
+            username: credential.descriptor.username, password: credential.password, requestID: requestID)
     }
 
     func fillGeneratedPassword(_ password: String, for requestID: UUID, evaluate: Evaluate) async throws {

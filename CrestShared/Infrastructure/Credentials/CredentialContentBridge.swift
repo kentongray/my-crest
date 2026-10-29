@@ -34,10 +34,7 @@ enum BrowserCredentialContentBridge {
                 },
                 focusForTesting(selector) {
                   const input = document.querySelector(selector);
-                  if (!(input instanceof HTMLInputElement) || input.type !== "password") {
-                    return false;
-                  }
-                  return reportFocus(input);
+                  return input instanceof HTMLInputElement && reportFocusOn(input);
                 }
             """#
     #else
@@ -308,9 +305,11 @@ enum BrowserCredentialContentBridge {
           // Raising the prompt, and starting to follow the field it points at.
           // The listener and the testing hook go through here together so the
           // hook cannot drift away from the path a real focus takes.
-          const reportFocus = (input) => {
-            const root = rootFor(input);
-            const fields = snapshot(root, input);
+          // `input` is the field the prompt sits under: a password field, or
+          // the username field of a form whose password field it reads.
+          const reportFocus = (input, passwordInput = input) => {
+            const root = rootFor(passwordInput);
+            const fields = snapshot(root, passwordInput);
             if (!fields) return false;
             const rect = rectOf(input);
             trackedField = rect ? { input: new WeakRef(input), formID: fields.formID } : null;
@@ -365,10 +364,22 @@ enum BrowserCredentialContentBridge {
             \#(testingMethods)
           });
 
+          // A focused password field raises the prompt, and so does the
+          // username field of a sign-in form, which reads the form through
+          // the password field it signs in with. Any other field does not.
+          const reportFocusOn = (input) => {
+            if (input.type === "password") return reportFocus(input);
+            if (!["text", "email", "tel"].includes(input.type)) return false;
+            const root = rootFor(input);
+            const passwordInput = passwordInputsIn(root).find((candidate) => passwordKind(candidate) === "current");
+            if (!passwordInput || usernameInputIn(root, passwordInput) !== input) return false;
+            return reportFocus(input, passwordInput);
+          };
+
           document.addEventListener("focusin", (event) => {
-            const input = passwordInputFromEvent(event);
-            if (!event.isTrusted || !input) return;
-            reportFocus(input);
+            if (!event.isTrusted) return;
+            const input = passwordInputFromEvent(event) || elementFromEvent(event);
+            if (input instanceof HTMLInputElement) reportFocusOn(input);
           }, true);
 
           // The prompt is anchored under the focused field, so it stops
