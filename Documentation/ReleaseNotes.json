@@ -4593,6 +4593,10 @@
     "fill-from-onepassword": {
       "category": "new",
       "message": "On the Mac, Crest's password suggestions can include your 1Password logins. Turn on Fill from 1Password in a Space's Passwords settings and approve Crest in 1Password; passwords are read from 1Password only when you pick one to fill."
+    },
+    "onepassword-helper-bridge": {
+      "category": "internal",
+      "message": "Crest reaches the 1Password app through a bundled helper that alone loads 1Password's SDK library, so Crest's own process keeps library validation, and no longer runs the 1Password CLI."
     }
   }
 }

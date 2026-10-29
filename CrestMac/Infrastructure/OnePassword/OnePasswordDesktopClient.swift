@@ -48,9 +48,26 @@ private struct OnePasswordDesktopRequest: Encodable {
     }
 }
 
+/// The library's answer. Its payload arrives as an array of byte values,
+/// though requests send theirs as base64; both spellings are read.
 private struct OnePasswordDesktopResponse: Decodable {
     let success: Bool
     let payload: Data
+
+    private enum CodingKeys: String, CodingKey {
+        case success
+        case payload
+    }
+
+    init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        success = try container.decode(Bool.self, forKey: .success)
+        if let bytes = try? container.decode([UInt8].self, forKey: .payload) {
+            payload = Data(bytes)
+        } else {
+            payload = try container.decode(Data.self, forKey: .payload)
+        }
+    }
 }
 
 /// What the app says when it refuses a request.
@@ -136,14 +153,14 @@ actor OnePasswordDesktopClient {
     // MARK: - Variables
 
     let accountName: String
-    private let library: OnePasswordDesktopLibrary
+    private let bridge: OnePasswordDesktopBridge
     private var clientID: UInt64?
 
     // MARK: - Initializers
 
-    init(accountName: String, library: OnePasswordDesktopLibrary) {
+    init(accountName: String, bridge: OnePasswordDesktopBridge) {
         self.accountName = accountName
-        self.library = library
+        self.bridge = bridge
     }
 
     // MARK: - Actions - Vaults and Items
@@ -158,6 +175,15 @@ actor OnePasswordDesktopClient {
 
     func item(_ itemID: String, inVault vaultID: String) async throws -> OnePasswordItem {
         try await invoke("ItemsGet", OnePasswordItemGetParameters(vaultId: vaultID, itemId: itemID))
+    }
+
+    /// Every login item in every vault the account can read, without values.
+    func loginOverviews() async throws -> [OnePasswordItemOverview] {
+        var overviews: [OnePasswordItemOverview] = []
+        for vault in try await vaults() {
+            overviews += try await items(inVault: vault.id).filter { $0.category == "Login" }
+        }
+        return overviews
     }
 
     // MARK: - Actions - Requests
@@ -210,7 +236,7 @@ actor OnePasswordDesktopClient {
             OnePasswordDesktopRequest(kind: kind, accountName: accountName, payload: payload))
         let response: OnePasswordDesktopResponse
         do {
-            response = try JSONDecoder().decode(OnePasswordDesktopResponse.self, from: await library.send(request))
+            response = try JSONDecoder().decode(OnePasswordDesktopResponse.self, from: await bridge.send(request))
         } catch let error as OnePasswordDesktopError {
             throw error
         } catch {

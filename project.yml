@@ -323,6 +323,13 @@ targets:
         copy:
           destination: wrapper
           subpath: Contents/Helpers
+      - target: CrestOnePasswordHelper
+        embed: true
+        link: false
+        codeSign: true
+        copy:
+          destination: wrapper
+          subpath: Contents/Helpers
       - package: Sparkle
         product: Sparkle
       - sdk: AuthenticationServices.framework
@@ -361,6 +368,25 @@ targets:
         PRODUCT_NAME: crest-browser
         PRODUCT_MODULE_NAME: CrestBrowserHelper
         PRODUCT_BUNDLE_IDENTIFIER: com.pauldavis.crest.browser-helper
+        GENERATE_INFOPLIST_FILE: YES
+        CREATE_INFOPLIST_SECTION_IN_BINARY: YES
+        SKIP_INSTALL: YES
+        SWIFT_EMIT_LOC_STRINGS: NO
+  # The bridge Crest runs to reach the 1Password app through the SDK library
+  # the app ships (Contents/Helpers). It alone may load that library. Mac only.
+  CrestOnePasswordHelper:
+    type: tool
+    platform: macOS
+    sources:
+      - path: CrestOnePasswordHelper
+        excludes:
+          - "*.entitlements"
+    settings:
+      base:
+        PRODUCT_NAME: Crest 1Password Helper
+        PRODUCT_MODULE_NAME: CrestOnePasswordHelper
+        PRODUCT_BUNDLE_IDENTIFIER: com.pauldavis.crest.onepassword-helper
+        CODE_SIGN_ENTITLEMENTS: CrestOnePasswordHelper/CrestOnePasswordHelper.entitlements
         GENERATE_INFOPLIST_FILE: YES
         CREATE_INFOPLIST_SECTION_IN_BINARY: YES
         SKIP_INSTALL: YES
