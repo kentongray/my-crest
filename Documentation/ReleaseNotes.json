@@ -4590,6 +4590,10 @@
       "category": "internal",
       "message": "Listing or clearing a locked Space's website data is refused until it is unlocked, Remove All clears every site's data in the Space, and the site commands on iPhone and iPad need a page that shows a site."
     },
+    "browser-window-focus-redraw": {
+      "category": "improved",
+      "message": "On Mac, a browser window responds sooner when an alert closes and when the window comes back to the front."
+    },
     "command-bar-dim-setting": {
       "category": "new",
       "message": "On the Mac, Look & Feel can stop the command bar from dimming the page behind it. The bar then casts a shadow, and clicking outside it still closes it."
