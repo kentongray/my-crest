@@ -408,6 +408,20 @@ final class BrowserOnboardingFlow {
         send(IncludeImportSpace(sourceSpaceID: sourceSpaceID, included: isIncluded))
     }
 
+    /// Brings the reviewed Space `sourceSpaceID` in on its own rather than in
+    /// a group with the Spaces it shared a session with.
+    func separate(_ sourceSpaceID: UUID) {
+        send(SeparateImportSpace(sourceSpaceID: sourceSpaceID))
+    }
+
+    /// The reviewed Spaces that come in with `review` as one group, in the
+    /// review's order: those of its group the review brings in as new Spaces,
+    /// as the import forms groups. Empty when `review` does not come in new.
+    func reviewGroup(of review: BrowserImportSpaceReview) -> [BrowserImportSpaceReview] {
+        guard review.comesInNew else { return [] }
+        return reviewSpaces.filter { $0.comesInNew && $0.groupID == review.groupID }
+    }
+
     func setPasswordsIncluded(_ isIncluded: Bool, in sourceSpaceID: UUID) {
         send(IncludeImportPasswords(sourceSpaceID: sourceSpaceID, included: isIncluded))
     }

@@ -46,7 +46,7 @@ struct BrowserRootPageSurface: View, @MainActor Equatable {
 
     /// The tab the window shows in this Space.
     private var shownTab: TabStateModel? {
-        model.browser.selectedTabID(in: space.id).flatMap { space.tabs.model($0) }
+        model.browser.selectedTabID(in: space.id).flatMap { space.shownTab($0) }
     }
 
     private var surfacePage: BrowserPage? {

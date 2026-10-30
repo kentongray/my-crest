@@ -117,7 +117,7 @@ struct BrowserSidebarLoadedContent: View {
             guard
                 pages.containsResidentPage(matching: assignment),
                 let space = context.browser.spaceModel(matching: assignment.spaceAssignment),
-                space.tabs.model(assignment.tabID) != nil,
+                space.shownTab(assignment.tabID) != nil,
                 await context.spaceAccess.unlock(space)
             else { return }
             context.selectSpace(assignment.spaceID)
@@ -133,7 +133,7 @@ struct BrowserSidebarLoadedContent: View {
     private func ownerFaviconData(
         _ assignment: BrowserTabRuntimeAssignment
     ) -> Data? {
-        guard context.browser.spaceModel(matching: assignment.spaceAssignment)?.tabs.model(assignment.tabID) != nil
+        guard context.browser.spaceModel(matching: assignment.spaceAssignment)?.shownTab(assignment.tabID) != nil
         else { return nil }
         return context.browser.core.state.favicons.image(of: assignment.tabID)
     }

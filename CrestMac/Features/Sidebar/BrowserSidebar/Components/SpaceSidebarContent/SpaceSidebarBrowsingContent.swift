@@ -36,7 +36,7 @@ struct SpaceSidebarBrowsingContent: View {
 
     @ViewBuilder
     private func content(_ listContext: BrowserSidebarListContext) -> some View {
-        let hasPinnedTabs = !listContext.space.sidebar.section(.pinned).isEmpty
+        let hasPinnedTabs = !listContext.space.pinSource.sidebar.section(.pinned).isEmpty
         BrowserPinnedTabsDropSection(context: listContext)
             .equatable()
             .padding(.horizontal, BrowserSidebarMetrics.layerInset)
@@ -62,7 +62,12 @@ struct SpaceSidebarBrowsingContent: View {
         SpaceSidebarTabListScroll(browser: browser) {
             BrowserSidebarBackgroundInteractionView(
                 editSpace: editSpace,
-                createSpace: createSpace
+                createSpace: createSpace,
+                createSubSpace: browser.isPrivateBrowsing
+                    ? nil
+                    : { [space = listContext.space.id] in
+                        if browser.addSubSpace(after: space) { BrowserSpaceGroupNotices.formed() }
+                    }
             )
             .modifier(
                 BrowserSidebarEmptySpaceNewTabGesture(
@@ -198,7 +203,11 @@ private struct BrowserSidebarSelectionReconciler: View {
     /// it is shown and unlocked, and residency.
     private var snapshot: Snapshot {
         let space = context.space
-        let lists = space.sidebar.lists.map(\.rows)
+        // A Sub-Space lists the pinned tabs its group shares in place of its own.
+        let ownPins = space.sidebar.section(.pinned)
+        let lists =
+            [space.pinSource.sidebar.section(.pinned).rows]
+            + space.sidebar.lists.filter { $0 !== ownPins }.map(\.rows)
         let listed = lists.flatMap { $0.flatMap(\.members) }
         return Snapshot(
             lists: lists,

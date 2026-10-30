@@ -106,6 +106,45 @@ public sealed partial class BrowserContractsTests {
             device.Authority.Current.DisposableSeedMarker));
     }
 
+    /// Spaces that shared one session where they came from come in as one
+    /// group: the first brought leads, a Sub-Space leaves the pinned tabs the
+    /// primary holds to it and keeps its own as saved tabs, and one the review
+    /// separates comes in alone, as it was.
+    [Fact]
+    public void SpacesThatSharedASessionComeInAsOneGroupUnlessTheReviewSeparatesThem() {
+        var session = SavedSession().Document["session"]!.AsObject();
+        session.Remove("disposableSeedMarker");
+        using var device = new TestDevice(session);
+        var window = device.Showing(session);
+        var work = ImportedSpace("Work", ImportedTab("https://favorite.example/", "pinned"), ImportedTab("https://work.example/"));
+        var client = ImportedSpace("Client", ImportedTab("https://favorite.example/", "pinned"),
+            ImportedTab("https://own-pin.example/", "pinned"), ImportedTab("https://client.example/"));
+        var school = ImportedSpace("School", ImportedTab("https://favorite.example/", "pinned"), ImportedTab("https://school.example/"));
+        foreach (var joined in new[] { client, school }) {
+            joined["primarySpaceID"] = work["id"]!.DeepClone();
+            joined["sharedProfileID"] = work["profile"]!["id"]!.DeepClone();
+            joined["membershipModifiedAt"] = 800000000.0;
+        }
+        Reviewing(device, work, client, school);
+        device.Send(new SeparateImportSpace(SpaceId(school)));
+        device.Send(new BeginImportCommit());
+
+        var changes = device.Send(new ImportReviewedSpaces(device.Workspace, window));
+
+        var current = device.Authority.Current;
+        SpaceState Named(string name) => current.Spaces.Single(space => space.Settings.Name == name);
+        var (leader, member, alone) = (Named("Work"), Named("Client"), Named("School"));
+        Assert.Null(leader.Membership);
+        Assert.Equal((leader.Id, leader.ProfileId), (member.Membership!.PrimaryId, member.ProfileId));
+        Assert.Equal([("https://own-pin.example/", TabPlacement.Saved), ("https://client.example/", TabPlacement.Current)],
+            member.Tabs.Select(tab => (tab.Url, tab.Placement)));
+        // The pin that became a saved tab still wears the image it came with.
+        Assert.Contains(changes.OfType<TabsImported>().Single().Tabs, imported => imported.TabId == member.Tabs[0].Id);
+        Assert.Null(alone.Membership);
+        Assert.NotEqual(leader.ProfileId, alone.ProfileId);
+        Assert.Equal(TabPlacement.Pinned, alone.Tabs[0].Placement);
+    }
+
     [Fact]
     public void AReviewedImportJoinsTheSpaceItNamesAndMakesTheRestNewSpaces() {
         var fixture = SavedSession();

@@ -134,6 +134,25 @@ public sealed partial record SetupImportReview {
 
     /// `review` with `edit` made to `sourceId`, unless it would bring the
     /// Space in new once the workspace is full, which changes nothing.
+    /// `review` with `sourceId` coming in on its own, rather than with the
+    /// Spaces it shared a session with where it came from. A Space that leads
+    /// such Spaces hands them to the next of them.
+    internal SetupImportReview Separating(Guid sourceId, SessionState session) {
+        ArgumentNullException.ThrowIfNull(session);
+        if (Spaces.FirstOrDefault(space => space.Source.Id == sourceId) is not { } separated) return this;
+        var members = Spaces.Where(space => space.Source.Id != sourceId && space.Source.PrimaryId == sourceId).ToList();
+        if (separated.Source.Membership is not { IsSubSpace: true } && members.Count == 0) return this;
+        var heir = members.Count == 0 ? null : members[0].Source with { Membership = null };
+        return (this with {
+            Spaces = [.. Spaces.Select(space => {
+                if (space.Source.Id == sourceId) return space with { Source = space.Source with { Membership = null } };
+                if (heir is null || space.Source.PrimaryId != sourceId) return space;
+                return space.Source.Id == heir.Id ? space with { Source = heir }
+                    : space with { Source = space.Source with { Membership = SpaceMembership.Joining(heir, space.Source.Membership!.ModifiedAt) } };
+            })]
+        }).Analyzed(session);
+    }
+
     private SetupImportReview Editing(Guid sourceId, SessionState session, Func<SetupReviewSpace, SetupReviewSpace> edit) {
         ArgumentNullException.ThrowIfNull(session);
         if (Spaces.FirstOrDefault(space => space.Source.Id == sourceId) is not { } current) return this;

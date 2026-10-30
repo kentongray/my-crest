@@ -48,9 +48,27 @@ struct BrowserOnboardingReviewChecklist: View {
         BrowserOnboardingReviewRow(
             isOn: spaceInclusion, canToggle: !isOutOfRoom, accessibilityLabel: "Bring this Space"
         ) {
-            Text(review.sourceSpace.settings.name)
-                .lineLimit(1)
+            VStack(alignment: .leading, spacing: 1) {
+                Text(review.sourceSpace.settings.name)
+                    .lineLimit(1)
+                if let primary = groupPrimary {
+                    Text("Sub-Space of \(primary.sourceSpace.settings.name)")
+                        .font(CrestTypography.sans(11, weight: .medium))
+                        .foregroundStyle(CrestBrandTheme.textDisplay.opacity(0.6))
+                        .lineLimit(1)
+                }
+            }
             Spacer(minLength: 8)
+            if flow.reviewGroup(of: review).count > 1 {
+                Button("Separate") { flow.separate(review.id) }
+                    .buttonStyle(
+                        CrestChromeButtonStyle(
+                            controlSize: nil, cornerRadius: CrestRadius.compact, showsRestingFill: true)
+                    )
+                    .font(CrestTypography.sans(12, weight: .semibold))
+                    .disabled(!review.isIncluded)
+                    .accessibilityIdentifier("onboarding-review-separate")
+            }
             BrowserOnboardingReviewDestinationMenu(
                 spaces: flow.destinationSpaces,
                 destination: destination,
@@ -101,6 +119,12 @@ struct BrowserOnboardingReviewChecklist: View {
     }
 
     // MARK: - Choices
+
+    /// The reviewed Space that leads the group this one comes in with, while
+    /// it is another.
+    private var groupPrimary: BrowserImportSpaceReview? {
+        flow.reviewGroup(of: review).first.flatMap { $0.id == review.id ? nil : $0 }
+    }
 
     /// The Space would come in new, but Crest holds no more new Spaces.
     private var isOutOfRoom: Bool {

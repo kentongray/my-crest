@@ -164,21 +164,48 @@ private struct BrowserOnboardingReviewSpaceStepper: View {
 
     var body: some View {
         VStack(spacing: 12) {
-            ForEach(spaces) { item in
-                let isCurrent = item.id == selectedSpaceID
-                Capsule(style: .continuous)
-                    .fill(isCurrent ? CrestBrandPalette.butter : CrestBrandPalette.paper.opacity(0.3))
-                    .frame(width: isCurrent ? 8 : 6, height: isCurrent ? 32 : 6)
-                    .animation(
-                        CrestMotion.onboardingProgress.unlessReducingMotion(reduceMotion), value: selectedSpaceID
-                    )
-                    .accessibilityLabel(item.sourceSpace.settings.name)
-                    .accessibilityValue(isCurrent ? "Current Space" : "Space in review")
+            ForEach(groups, id: \.[0].id) { group in
+                // The Spaces that come in as one group share an outline.
+                VStack(spacing: 12) {
+                    ForEach(group) { item in step(item) }
+                }
+                .padding(group.count > 1 ? 5 : 0)
+                .overlay {
+                    if group.count > 1 {
+                        Capsule(style: .continuous)
+                            .strokeBorder(CrestBrandPalette.paper.opacity(0.35), lineWidth: CrestLayout.hairline)
+                    }
+                }
             }
         }
         .padding(.trailing, BrowserOnboardingStageMetrics.inset)
         .accessibilityElement(children: .contain)
         .accessibilityLabel("Space review progress")
+    }
+
+    /// The reviewed Spaces in order, split where one group ends and the next
+    /// begins. Only the Spaces the review brings in as new Spaces come in as
+    /// a group; any other stands on its own.
+    private var groups: [[BrowserImportSpaceReview]] {
+        var groups: [[BrowserImportSpaceReview]] = []
+        for item in spaces {
+            if let last = groups.last?.last, last.comesInNew, item.comesInNew, last.groupID == item.groupID {
+                groups[groups.count - 1].append(item)
+            } else {
+                groups.append([item])
+            }
+        }
+        return groups
+    }
+
+    private func step(_ item: BrowserImportSpaceReview) -> some View {
+        let isCurrent = item.id == selectedSpaceID
+        return Capsule(style: .continuous)
+            .fill(isCurrent ? CrestBrandPalette.butter : CrestBrandPalette.paper.opacity(0.3))
+            .frame(width: isCurrent ? 8 : 6, height: isCurrent ? 32 : 6)
+            .animation(CrestMotion.onboardingProgress.unlessReducingMotion(reduceMotion), value: selectedSpaceID)
+            .accessibilityLabel(item.sourceSpace.settings.name)
+            .accessibilityValue(isCurrent ? "Current Space" : "Space in review")
     }
 }
 

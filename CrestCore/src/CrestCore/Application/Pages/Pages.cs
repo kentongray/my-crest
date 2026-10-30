@@ -469,13 +469,13 @@ internal sealed class Pages(Device device, Engines engines, IClock clock, IIdSou
     /// is not being deleted and this process may show it; null otherwise.
     internal SpaceState? Shown(Page page) =>
         device.Attached(page.WorkspaceId) is { } workspace && !workspace.IsDeleting(page.SpaceId)
-            && workspace.Current.Space(page.SpaceId) is { } space && !workspace.IsLocked(space)
+            && workspace.Current.ViewedSpace(page.SpaceId) is { } space && !workspace.IsLocked(space)
             ? space : null;
 
     /// A tab its Space still holds, in a Space that is not being deleted.
     private TabState? Held(Guid workspaceId, Guid spaceId, Guid tabId) =>
         device.Attached(workspaceId) is { } workspace && !workspace.IsDeleting(spaceId)
-            && workspace.Current.Space(spaceId) is { } space
+            && workspace.Current.ViewedSpace(spaceId) is { } space
             ? space.Tabs.FirstOrDefault(tab => tab.Id == tabId) : null;
 
     #endregion
@@ -556,10 +556,11 @@ internal sealed class Pages(Device device, Engines engines, IClock clock, IIdSou
     /// being deleted, here or in the workspace a borrowed one borrows from, and
     /// that this process may show.
     internal SpaceState Hosting(NativeSessionAuthority workspace, Guid spaceId) {
-        var space = workspace.Current.KnownSpace(spaceId);
+        var session = workspace.Current;
+        var space = session.KnownSpace(spaceId);
         if (workspace.IsDeleting(spaceId)) throw new Rejected(new SpaceBeingDeleted(spaceId));
         if (workspace.IsLocked(space)) throw new Rejected(new SpaceLocked(spaceId));
-        return space;
+        return session.Viewed(space);
     }
 
     /// A window hosts one page for a tab at a time. Whether the workspace holds
