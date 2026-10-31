@@ -7,7 +7,7 @@ keywords: [content blocking, ads, trackers, permissions, camera, microphone, pop
 
 # Content blocking and site permissions
 
-Privacy decisions belong to the current Space. A permission granted to a work account does not silently become a permission for the same host in Personal.
+Privacy decisions belong to the current Space. A permission granted to a work account does not silently become a permission for the same host in Personal. The Spaces of a [Sub-Space](../spaces/sub-spaces.md) group share their site permissions and content-blocking choices.
 
 ## Content blocking
 

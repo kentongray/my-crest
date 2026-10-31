@@ -108,7 +108,6 @@ the live status for each issue.
 
 #### Planned and in progress
 
-- [ ] [Organize shared browsing sessions with Sub-Spaces](https://github.com/pauljoda/Crest/issues/144)
 - [ ] [Reveal the collapsed iPad sidebar on pointer hover](https://github.com/pauljoda/Crest/issues/176)
 - [ ] [feature: Add Edit Pinned URL menu option and dialogue](https://github.com/pauljoda/Crest/issues/218)
 - [ ] [bug: white flash between loading screen in dark mode](https://github.com/pauljoda/Crest/issues/246)
@@ -143,11 +142,11 @@ the live status for each issue.
 - [ ] [Keep a Quick Window from another app clear of a new tab's keyboard on iPhone](https://github.com/pauljoda/Crest/issues/563)
 - [ ] [Say so when a link from another app needs a locked Space](https://github.com/pauljoda/Crest/issues/564)
 - [ ] [bug: Saved passwords: one bad item can break a Space, and other storage gaps](https://github.com/pauljoda/Crest/issues/649)
-- [ ] [feature: Option to share extensions and history across Spaces (or shared profile mode)](https://github.com/pauljoda/Crest/issues/676)
 
 #### Completed
 
 - [x] [feature: Swipping Tab Gesture On iphone](https://github.com/pauljoda/Crest/issues/54)
+- [x] [Organize shared browsing sessions with Sub-Spaces](https://github.com/pauljoda/Crest/issues/144)
 - [x] [Clear browsing data by Space and time range](https://github.com/pauljoda/Crest/issues/170) — [`a6f0f0c3`](https://github.com/pauljoda/Crest/commit/a6f0f0c35427c5cf9029a1f01bd47d20ea3b42a6)
 - [x] [Investigate mouse side buttons ignoring the sidebar's Space switching](https://github.com/pauljoda/Crest/issues/227) — [`36ed0821`](https://github.com/pauljoda/Crest/commit/36ed0821b08b6373775208aa9bb104596f1184a1)
 - [x] [Evaluate a visual recent-tab switcher on Mac](https://github.com/pauljoda/Crest/issues/254) — [`179e9e8b`](https://github.com/pauljoda/Crest/commit/179e9e8b108caf7212188fc10c22625033764832)
@@ -205,6 +204,7 @@ the live status for each issue.
 - [x] [Keep Look and Feel changes smooth while they preview live](https://github.com/pauljoda/Crest/issues/619) — [`b3fd540c`](https://github.com/pauljoda/Crest/commit/b3fd540c0157fb630535540793e68888f23f508a)
 - [x] [bug: An imported password with an IPv6 host makes the whole Space's passwords unreadable](https://github.com/pauljoda/Crest/issues/645)
 - [x] [Stop Crest freezing when an iCloud sync arrives during a save](https://github.com/pauljoda/Crest/issues/667) — [`e4d08a31`](https://github.com/pauljoda/Crest/commit/e4d08a31582180422fd2870298d63f358ffe499a)
+- [x] [feature: Option to share extensions and history across Spaces (or shared profile mode)](https://github.com/pauljoda/Crest/issues/676)
 - [x] [Clear a single site's cookies, cache and website data, and manage website data in Settings](https://github.com/pauljoda/Crest/issues/686) — [`a6f0f0c3`](https://github.com/pauljoda/Crest/commit/a6f0f0c35427c5cf9029a1f01bd47d20ea3b42a6)
 
 <!-- crest-roadmap-sync:end -->

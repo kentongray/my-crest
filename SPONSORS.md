@@ -6,7 +6,7 @@ Ko-fi or Patreon membership level and ordered alphabetically within each level.
 
 ## Sponsor — $25/month
 
-_No public sponsors yet._
+- Jesus Rojas: [https://jesusvr.dev/](https://jesusvr.dev/) 
 
 ## Sustainer — $10/month
 
